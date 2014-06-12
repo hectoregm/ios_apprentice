@@ -10,6 +10,8 @@
 
 @interface BullsEyeViewController : UIViewController
 
+- (IBAction)sliderMoved:(UISlider *)slider;
+
 - (IBAction)showAlert;
 
 @end

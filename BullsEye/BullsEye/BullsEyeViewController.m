@@ -26,6 +26,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)sliderMoved:(UISlider *)slider
+{
+    NSLog(@"The value of the slider is now: %f", slider.value);
+}
+
 - (IBAction)showAlert
 {
     UIAlertView *alertView = [[UIAlertView alloc]
