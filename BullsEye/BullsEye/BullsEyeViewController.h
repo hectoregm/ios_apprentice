@@ -11,6 +11,7 @@
 @interface BullsEyeViewController : UIViewController
 
 @property (nonatomic, weak) IBOutlet UISlider *slider;
+@property (nonatomic, weak) IBOutlet UILabel *targetLabel;
 
 - (IBAction)sliderMoved:(UISlider *)slider;
 
