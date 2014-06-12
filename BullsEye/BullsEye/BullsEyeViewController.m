@@ -13,6 +13,9 @@
 @end
 
 @implementation BullsEyeViewController
+{
+    int _currentValue;
+}
 
 - (void)viewDidLoad
 {
@@ -28,17 +31,18 @@
 
 - (void)sliderMoved:(UISlider *)slider
 {
-    NSLog(@"The value of the slider is now: %f", slider.value);
+    _currentValue = lround(slider.value);
 }
 
 - (IBAction)showAlert
 {
+    NSString *message = [NSString stringWithFormat: @"The value of the slider is: %d", _currentValue];
     UIAlertView *alertView = [[UIAlertView alloc]
-                              initWithTitle:@"Hello World"
-                              message:@"This is my first app!"
-                              delegate:nil
-                              cancelButtonTitle:@"Awesome"
-                              otherButtonTitles:nil];
+                              initWithTitle: @"Hello, World"
+                              message: message
+                              delegate: nil
+                              cancelButtonTitle: @"OK"
+                              otherButtonTitles: nil];
     [alertView show];
 }
 
