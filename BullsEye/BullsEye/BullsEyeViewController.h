@@ -10,6 +10,8 @@
 
 @interface BullsEyeViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UISlider *slider;
+
 - (IBAction)sliderMoved:(UISlider *)slider;
 
 - (IBAction)showAlert;
