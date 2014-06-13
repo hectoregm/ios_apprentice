@@ -21,6 +21,7 @@
 		F9090CB819494D3B001DE150 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9090C9A19494D3B001DE150 /* UIKit.framework */; };
 		F9090CC019494D3B001DE150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9090CBE19494D3B001DE150 /* InfoPlist.strings */; };
 		F9090CC219494D3B001DE150 /* BullsEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9090CC119494D3B001DE150 /* BullsEyeTests.m */; };
+		F9D3168F194A8782003B0595 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D3168E194A8782003B0595 /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		F9090CBD19494D3B001DE150 /* BullsEyeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BullsEyeTests-Info.plist"; sourceTree = "<group>"; };
 		F9090CBF19494D3B001DE150 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F9090CC119494D3B001DE150 /* BullsEyeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BullsEyeTests.m; sourceTree = "<group>"; };
+		F9D3168D194A8782003B0595 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		F9D3168E194A8782003B0595 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				F9090CA819494D3B001DE150 /* Main.storyboard */,
 				F9090CAB19494D3B001DE150 /* BullsEyeViewController.h */,
 				F9090CAC19494D3B001DE150 /* BullsEyeViewController.m */,
+				F9D3168D194A8782003B0595 /* AboutViewController.h */,
+				F9D3168E194A8782003B0595 /* AboutViewController.m */,
 				F9090CAE19494D3B001DE150 /* Images.xcassets */,
 				F9090C9D19494D3B001DE150 /* Supporting Files */,
 			);
@@ -252,6 +257,7 @@
 			files = (
 				F9090CA319494D3B001DE150 /* main.m in Sources */,
 				F9090CAD19494D3B001DE150 /* BullsEyeViewController.m in Sources */,
+				F9D3168F194A8782003B0595 /* AboutViewController.m in Sources */,
 				F9090CA719494D3B001DE150 /* BullsEyeAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
