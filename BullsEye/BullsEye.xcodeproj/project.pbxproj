@@ -22,6 +22,7 @@
 		F9090CC019494D3B001DE150 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9090CBE19494D3B001DE150 /* InfoPlist.strings */; };
 		F9090CC219494D3B001DE150 /* BullsEyeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9090CC119494D3B001DE150 /* BullsEyeTests.m */; };
 		F9D3168F194A8782003B0595 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D3168E194A8782003B0595 /* AboutViewController.m */; };
+		F9D31691194AA15D003B0595 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = F9D31690194AA15D003B0595 /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		F9090CC119494D3B001DE150 /* BullsEyeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BullsEyeTests.m; sourceTree = "<group>"; };
 		F9D3168D194A8782003B0595 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		F9D3168E194A8782003B0595 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		F9D31690194AA15D003B0595 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 		F9090C9C19494D3B001DE150 /* BullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				F9D31690194AA15D003B0595 /* BullsEye.html */,
 				F9090CA519494D3B001DE150 /* BullsEyeAppDelegate.h */,
 				F9090CA619494D3B001DE150 /* BullsEyeAppDelegate.m */,
 				F9090CA819494D3B001DE150 /* Main.storyboard */,
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9090CAF19494D3B001DE150 /* Images.xcassets in Resources */,
+				F9D31691194AA15D003B0595 /* BullsEye.html in Resources */,
 				F9090CA119494D3B001DE150 /* InfoPlist.strings in Resources */,
 				F9090CAA19494D3B001DE150 /* Main.storyboard in Resources */,
 			);
