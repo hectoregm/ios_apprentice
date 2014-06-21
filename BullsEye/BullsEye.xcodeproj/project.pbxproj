@@ -118,8 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				F9D31690194AA15D003B0595 /* BullsEye.html */,
-				F9090CA519494D3B001DE150 /* BullsEyeAppDelegate.h */,
-				F9090CA619494D3B001DE150 /* BullsEyeAppDelegate.m */,
 				F9090CA819494D3B001DE150 /* Main.storyboard */,
 				F9090CAB19494D3B001DE150 /* BullsEyeViewController.h */,
 				F9090CAC19494D3B001DE150 /* BullsEyeViewController.m */,
@@ -134,6 +132,8 @@
 		F9090C9D19494D3B001DE150 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9090CA519494D3B001DE150 /* BullsEyeAppDelegate.h */,
+				F9090CA619494D3B001DE150 /* BullsEyeAppDelegate.m */,
 				F9090C9E19494D3B001DE150 /* BullsEye-Info.plist */,
 				F9090C9F19494D3B001DE150 /* InfoPlist.strings */,
 				F9090CA219494D3B001DE150 /* main.m */,
