@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F977ED541957485800D6DE87 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F977ED531957485800D6DE87 /* AddItemViewController.m */; };
 		F9C75ED619565EEA00F0231F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C75ED519565EEA00F0231F /* Foundation.framework */; };
 		F9C75ED819565EEA00F0231F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C75ED719565EEA00F0231F /* CoreGraphics.framework */; };
 		F9C75EDA19565EEA00F0231F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C75ED919565EEA00F0231F /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F977ED521957485800D6DE87 /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		F977ED531957485800D6DE87 /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 		F9C75ED219565EEA00F0231F /* Checklists.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Checklists.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C75ED519565EEA00F0231F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F9C75ED719565EEA00F0231F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				F9C75EE719565EEA00F0231F /* Main.storyboard */,
 				F9C75EEA19565EEA00F0231F /* ChecklistsViewController.h */,
 				F9C75EEB19565EEA00F0231F /* ChecklistsViewController.m */,
+				F977ED521957485800D6DE87 /* AddItemViewController.h */,
+				F977ED531957485800D6DE87 /* AddItemViewController.m */,
 				F9C75EED19565EEA00F0231F /* Images.xcassets */,
 				F977ED5119573E8C00D6DE87 /* Model */,
 				F9C75EDC19565EEA00F0231F /* Supporting Files */,
@@ -266,6 +271,7 @@
 				F9C75EE219565EEA00F0231F /* main.m in Sources */,
 				F9C75EE619565EEA00F0231F /* ChecklistsAppDelegate.m in Sources */,
 				F9C75EEC19565EEA00F0231F /* ChecklistsViewController.m in Sources */,
+				F977ED541957485800D6DE87 /* AddItemViewController.m in Sources */,
 				F9FE6F121957353D00A4D602 /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
