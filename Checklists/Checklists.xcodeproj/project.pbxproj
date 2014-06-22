@@ -112,8 +112,6 @@
 		F9C75EDB19565EEA00F0231F /* Checklists */ = {
 			isa = PBXGroup;
 			children = (
-				F9C75EE419565EEA00F0231F /* ChecklistsAppDelegate.h */,
-				F9C75EE519565EEA00F0231F /* ChecklistsAppDelegate.m */,
 				F9C75EE719565EEA00F0231F /* Main.storyboard */,
 				F9C75EEA19565EEA00F0231F /* ChecklistsViewController.h */,
 				F9C75EEB19565EEA00F0231F /* ChecklistsViewController.m */,
@@ -126,6 +124,8 @@
 		F9C75EDC19565EEA00F0231F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F9C75EE419565EEA00F0231F /* ChecklistsAppDelegate.h */,
+				F9C75EE519565EEA00F0231F /* ChecklistsAppDelegate.m */,
 				F9C75EDD19565EEA00F0231F /* Checklists-Info.plist */,
 				F9C75EDE19565EEA00F0231F /* InfoPlist.strings */,
 				F9C75EE119565EEA00F0231F /* main.m */,
