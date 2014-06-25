@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "ListDetailViewController.h"
+
+@class DataModel;
+
 @interface AllListsViewController : UITableViewController<ListDetailViewControllerDelegate>
+
+@property (nonatomic, strong) DataModel *dataModel;
 
 @end
