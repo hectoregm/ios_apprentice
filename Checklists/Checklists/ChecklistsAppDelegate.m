@@ -26,6 +26,11 @@
     
     return YES;
 }
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    NSLog(@"didiReceiveLocalNotification %@", notification);
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {
