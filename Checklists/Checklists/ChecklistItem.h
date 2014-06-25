@@ -17,4 +17,6 @@
 @property (nonatomic, assign) NSInteger itemId;
 
 - (void)toggleChecked;
+- (void)scheduleNotification;
+
 @end
