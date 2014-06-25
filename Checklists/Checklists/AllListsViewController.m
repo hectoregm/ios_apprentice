@@ -21,18 +21,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+    
+    self.navigationController.delegate = self;
+    
+    NSInteger index = [self.dataModel indexOfSelectedChecklist];
+    
+    if (index >= 0 && index < [self.dataModel.lists count]) {
+        Checklist *checklist = self.dataModel.lists[index];
+        
+        [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"ShowChecklist"]) {
+        ChecklistViewController *controller = segue.destinationViewController;
+        controller.checklist = sender;
+    } else if ([segue.identifier isEqualToString:@"AddChecklist"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        ListDetailViewController *controller = (ListDetailViewController *)navigationController.topViewController;
+        
+        controller.delegate = self;
+        controller.checklistToEdit = nil;
+    }
 }
 
 #pragma mark - Table view data source
@@ -61,22 +78,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.dataModel setIndexOfSelectedChecklist:indexPath.row];
     Checklist *checklist = self.dataModel.lists[indexPath.row];
     [self performSegueWithIdentifier:@"ShowChecklist" sender:checklist];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"ShowChecklist"]) {
-        ChecklistViewController *controller = segue.destinationViewController;
-        controller.checklist = sender;
-    } else if ([segue.identifier isEqualToString:@"AddChecklist"]) {
-        UINavigationController *navigationController = segue.destinationViewController;
-        ListDetailViewController *controller = (ListDetailViewController *)navigationController.topViewController;
-        
-        controller.delegate = self;
-        controller.checklistToEdit = nil;
-    }
 }
 
 - (void)listDetailViewControllerDidCancel:(ListDetailViewController *)controller
@@ -125,6 +129,13 @@
     Checklist *checklist = self.dataModel.lists[indexPath.row];
     controller.checklistToEdit = checklist;
     [self presentViewController:navigationController animated:YES completion:nil];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    if (viewController == self) {
+        [self.dataModel setIndexOfSelectedChecklist:-1];
+    }
 }
 
 @end
