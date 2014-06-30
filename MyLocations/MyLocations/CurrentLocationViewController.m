@@ -7,6 +7,7 @@
 //
 
 #import "CurrentLocationViewController.h"
+#import "LocationDetailsViewController.h"
 
 @interface CurrentLocationViewController ()
 
@@ -56,6 +57,17 @@
     
     [self updateLabels];
     [self configureButton];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"TagLocation"]) {
+        UINavigationController *navigationController = segue.destinationViewController;
+        
+        LocationDetailsViewController *controller = (LocationDetailsViewController *)navigationController.topViewController;
+        controller.coordinate = _location.coordinate;
+        controller.placemark = _placemark;
+    }
 }
 
 #pragma mark - CLLocationManagerDelegate
