@@ -26,6 +26,9 @@
 		F9AD17F11960F2BB00504B44 /* LocationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17F01960F2BB00504B44 /* LocationDetailsViewController.m */; };
 		F9AD17F41961033200504B44 /* CategoryPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17F31961033200504B44 /* CategoryPickerViewController.m */; };
 		F9AD17F71961DD2100504B44 /* HudView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17F61961DD2100504B44 /* HudView.m */; };
+		F9AD17F91961FBE700504B44 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AD17F81961FBE700504B44 /* CoreData.framework */; };
+		F9AD17FC1961FC2200504B44 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17FA1961FC2200504B44 /* DataModel.xcdatamodeld */; };
+		F9AD17FF1961FDED00504B44 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17FE1961FDED00504B44 /* Location.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,10 @@
 		F9AD17F31961033200504B44 /* CategoryPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryPickerViewController.m; sourceTree = "<group>"; };
 		F9AD17F51961DD2100504B44 /* HudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudView.h; sourceTree = "<group>"; };
 		F9AD17F61961DD2100504B44 /* HudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudView.m; sourceTree = "<group>"; };
+		F9AD17F81961FBE700504B44 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		F9AD17FB1961FC2200504B44 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		F9AD17FD1961FDED00504B44 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		F9AD17FE1961FDED00504B44 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AD17F91961FBE700504B44 /* CoreData.framework in Frameworks */,
 				F94BAFAF195F0321004F67AA /* CoreLocation.framework in Frameworks */,
 				F97A0568195DFEB40039359A /* CoreGraphics.framework in Frameworks */,
 				F97A056A195DFEB40039359A /* UIKit.framework in Frameworks */,
@@ -116,6 +124,7 @@
 		F97A0564195DFEB40039359A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9AD17F81961FBE700504B44 /* CoreData.framework */,
 				F94BAFAE195F0321004F67AA /* CoreLocation.framework */,
 				F97A0565195DFEB40039359A /* Foundation.framework */,
 				F97A0567195DFEB40039359A /* CoreGraphics.framework */,
@@ -139,6 +148,9 @@
 				F9AD17F01960F2BB00504B44 /* LocationDetailsViewController.m */,
 				F9AD17F21961033200504B44 /* CategoryPickerViewController.h */,
 				F9AD17F31961033200504B44 /* CategoryPickerViewController.m */,
+				F9AD17FD1961FDED00504B44 /* Location.h */,
+				F9AD17FE1961FDED00504B44 /* Location.m */,
+				F9AD17FA1961FC2200504B44 /* DataModel.xcdatamodeld */,
 				F97A0580195DFEB40039359A /* Images.xcassets */,
 				F97A056C195DFEB40039359A /* Supporting Files */,
 			);
@@ -274,8 +286,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F97A057F195DFEB40039359A /* SecondViewController.m in Sources */,
+				F9AD17FC1961FC2200504B44 /* DataModel.xcdatamodeld in Sources */,
 				F97A0576195DFEB40039359A /* AppDelegate.m in Sources */,
 				F97A057C195DFEB40039359A /* CurrentLocationViewController.m in Sources */,
+				F9AD17FF1961FDED00504B44 /* Location.m in Sources */,
 				F97A0572195DFEB40039359A /* main.m in Sources */,
 				F9AD17F71961DD2100504B44 /* HudView.m in Sources */,
 				F9AD17F41961033200504B44 /* CategoryPickerViewController.m in Sources */,
@@ -496,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F9AD17FA1961FC2200504B44 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F9AD17FB1961FC2200504B44 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = F9AD17FB1961FC2200504B44 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F97A055A195DFEB40039359A /* Project object */;
 }
