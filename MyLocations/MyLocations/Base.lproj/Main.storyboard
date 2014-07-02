@@ -60,7 +60,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XOa-qv-Qwx">
-                                <rect key="frame" x="103" y="483" width="114" height="30"/>
+                                <rect key="frame" x="103" y="319" width="114" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get My Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -161,6 +161,10 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Xhd-zr-Ej0">
+                                                    <rect key="frame" x="123" y="10" width="144" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -288,8 +292,10 @@
                         <outlet property="categoryLabel" destination="gb5-Oq-B7Q" id="XGo-0i-qJf"/>
                         <outlet property="dateLabel" destination="umK-h1-g5F" id="EJu-vC-NxM"/>
                         <outlet property="descriptionTextView" destination="UBa-W2-Net" id="653-Zy-3Az"/>
+                        <outlet property="imageView" destination="Xhd-zr-Ej0" id="sKv-vW-z6d"/>
                         <outlet property="latitudeLabel" destination="bxl-ML-rSL" id="u0F-vU-T5o"/>
                         <outlet property="longitudeLabel" destination="hMc-rL-zuJ" id="QJW-BR-FJC"/>
+                        <outlet property="photoLabel" destination="66A-2V-jBN" id="ZNW-kF-IOZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9r-1c-7H6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,6 +507,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XhB-qR-O0n"/>
+        <segue reference="A4p-nA-dIX"/>
     </inferredMetricsTieBreakers>
 </document>

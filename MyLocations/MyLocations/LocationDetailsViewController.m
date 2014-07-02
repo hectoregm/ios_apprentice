@@ -11,7 +11,7 @@
 #import "HudView.h"
 #import "Location.h"
 
-@interface LocationDetailsViewController () <UITextViewDelegate>
+@interface LocationDetailsViewController () <UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextView *descriptionTextView;
 @property (nonatomic, weak) IBOutlet UILabel *categoryLabel;
@@ -19,7 +19,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *longitudeLabel;
 @property (nonatomic, weak) IBOutlet UILabel *addressLabel;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
-
+@property (nonatomic, weak) IBOutlet UIImageView *imageView;
+@property (nonatomic, weak) IBOutlet UILabel *photoLabel;
 @end
 
 @implementation LocationDetailsViewController
@@ -27,7 +28,30 @@
     NSString *_descriptionText;
     NSString *_categoryName;
     NSDate *_date;
+    UIImage *_image;
+    UIActionSheet *_actionSheet;
+    UIImagePickerController *_imagePicker;
 }
+
+#pragma mark - Properties
+
+- (void)setLocationToEdit:(Location *)newlocationToEdit
+{
+    if (_locationToEdit != newlocationToEdit) {
+        _locationToEdit = newlocationToEdit;
+        
+        _descriptionText = _locationToEdit.locationDescription;
+        _categoryName = _locationToEdit.category;
+        _date = _locationToEdit.date;
+        
+        self.coordinate = CLLocationCoordinate2DMake([_locationToEdit.latitude doubleValue],
+                                                     [_locationToEdit.longitude doubleValue]);
+        
+        self.placemark = _locationToEdit.placemark;
+    }
+}
+
+#pragma mark - Initialization
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -36,6 +60,9 @@
         _categoryName = @"No Category";
         _date = [NSDate date];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(applicationDidEnterBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
     
     return self;
 }
@@ -67,53 +94,7 @@
     [self.tableView addGestureRecognizer:gestureRecognizer];
 }
 
-- (void)setLocationToEdit:(Location *)newlocationToEdit
-{
-    if (_locationToEdit != newlocationToEdit) {
-        _locationToEdit = newlocationToEdit;
-        
-        _descriptionText = _locationToEdit.locationDescription;
-        _categoryName = _locationToEdit.category;
-        _date = _locationToEdit.date;
-        
-        self.coordinate = CLLocationCoordinate2DMake([_locationToEdit.latitude doubleValue],
-                                                     [_locationToEdit.longitude doubleValue]);
-        
-        self.placemark = _locationToEdit.placemark;
-    }
-}
-
-- (void)hideKeyboard:(UIGestureRecognizer *)gestureRecognizer
-{
-    CGPoint point = [gestureRecognizer locationInView:self.tableView];
-    
-    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
-    if (indexPath != nil && indexPath.section == 0 && indexPath.row == 0) {
-        return;
-    }
-    
-    [self.descriptionTextView resignFirstResponder];
-}
-
-- (NSString *)stringFromPlacemark:(CLPlacemark *)placemark
-{
-    return [NSString stringWithFormat:@"%@ %@, %@, %@ %@, %@",
-            placemark.subThoroughfare, placemark.thoroughfare,
-            placemark.locality, placemark.administrativeArea,
-            placemark.postalCode, placemark.country];
-}
-
-- (NSString *)formatDate:(NSDate *)theDate
-{
-    static NSDateFormatter *formatter = nil;
-    if (formatter == nil) {
-        formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
-        [formatter setTimeStyle:NSDateFormatterShortStyle];
-    }
-    
-    return [formatter stringFromDate:theDate];
-}
+#pragma mark - Callbacks
 
 - (IBAction)done:(id)sender
 {
@@ -152,6 +133,109 @@
     [self closeScreen];
 }
 
+- (void)applicationDidEnterBackground
+{
+    if (_imagePicker != nil) {
+        [self dismissViewControllerAnimated:NO completion:nil];
+        _imagePicker = nil;
+    }
+    
+    if (_actionSheet != nil) {
+        [_actionSheet dismissWithClickedButtonIndex:_actionSheet.cancelButtonIndex animated:NO];
+        _actionSheet = nil;
+    }
+    
+    [self.descriptionTextView resignFirstResponder];
+}
+
+- (IBAction)categoryPickerDidPickCategory:(UIStoryboardSegue *)segue
+{
+    CategoryPickerViewController *viewController = segue.sourceViewController;
+    _categoryName = viewController.selectedCategoryName;
+    self.categoryLabel.text = _categoryName;
+}
+
+- (void)hideKeyboard:(UIGestureRecognizer *)gestureRecognizer
+{
+    CGPoint point = [gestureRecognizer locationInView:self.tableView];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForRowAtPoint:point];
+    if (indexPath != nil && indexPath.section == 0 && indexPath.row == 0) {
+        return;
+    }
+    
+    [self.descriptionTextView resignFirstResponder];
+}
+
+#pragma mark - Helpers
+
+- (void)showImage:(UIImage *)image
+{
+    self.imageView.image = image;
+    self.imageView.hidden = NO;
+    self.imageView.frame = CGRectMake(10, 10, 260, 260);
+    self.photoLabel.hidden = YES;
+}
+
+- (void)closeScreen
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)takePhoto
+{
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    _imagePicker.delegate = self;
+    _imagePicker.allowsEditing = YES;
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+}
+
+- (void)choosePhotoFromLibrary
+{
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    _imagePicker.delegate = self;
+    _imagePicker.allowsEditing = YES;
+    [self presentViewController:_imagePicker animated:YES completion:nil];
+}
+
+- (void)showPhotoMenu
+{
+    if (YES || [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        _actionSheet = [[UIActionSheet alloc] initWithTitle:nil
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"Take Photo", @"Choose From Library", nil];
+        [_actionSheet showInView:self.view];
+    } else {
+        [self choosePhotoFromLibrary];
+    }
+}
+
+- (NSString *)stringFromPlacemark:(CLPlacemark *)placemark
+{
+    return [NSString stringWithFormat:@"%@ %@, %@, %@ %@, %@",
+            placemark.subThoroughfare, placemark.thoroughfare,
+            placemark.locality, placemark.administrativeArea,
+            placemark.postalCode, placemark.country];
+}
+
+- (NSString *)formatDate:(NSDate *)theDate
+{
+    static NSDateFormatter *formatter = nil;
+    if (formatter == nil) {
+        formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+    }
+    
+    return [formatter stringFromDate:theDate];
+}
+
+#pragma mark - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"PickCategory"]) {
@@ -160,17 +244,18 @@
     }
 }
 
-- (void)closeScreen
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
         return 88;
+    } else if (indexPath.section == 1) {
+        if (self.imageView.hidden) {
+            return 44;
+        } else {
+            return 280;
+        }
     } else if (indexPath.section == 2 && indexPath.row == 2) {
         CGRect rect = CGRectMake(100, 10, 205, 10000);
         self.addressLabel.frame = rect;
@@ -182,6 +267,25 @@
         return self.addressLabel.frame.size.height + 20;
     } else {
         return 44;
+    }
+}
+
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 || indexPath.section == 1) {
+        return indexPath;
+    } else {
+        return  nil;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        [self.descriptionTextView becomeFirstResponder];
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        [self showPhotoMenu];
     }
 }
 
@@ -198,27 +302,43 @@
     _descriptionText = textView.text;
 }
 
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    if (indexPath.section == 0 || indexPath.section == 1) {
-        return indexPath;
-    } else {
-        return  nil;
-    }
+    _image = info[UIImagePickerControllerEditedImage];
+    
+    [self showImage:_image];
+    [self.tableView reloadData];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    _imagePicker = nil;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        [self.descriptionTextView becomeFirstResponder];
-    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+    _imagePicker = nil;
 }
 
-- (IBAction)categoryPickerDidPickCategory:(UIStoryboardSegue *)segue
+#pragma mark - UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    CategoryPickerViewController *viewController = segue.sourceViewController;
-    _categoryName = viewController.selectedCategoryName;
-    self.categoryLabel.text = _categoryName;
+    if (buttonIndex == 0) {
+        [self takePhoto];
+    } else if (buttonIndex == 1) {
+        [self choosePhotoFromLibrary];
+    }
+    
+    _actionSheet = nil;
+}
+
+#pragma mark - Teardown
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end
