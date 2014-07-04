@@ -11,6 +11,7 @@
 #import "Location.h"
 #import "LocationCell.h"
 #import "UIImage+Resize.h"
+#import "NSMutableString+AddText.h"
 
 @interface LocationsViewController () <NSFetchedResultsControllerDelegate>
 //@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -50,6 +51,8 @@
     [super viewDidLoad];
     [self performFetch];
     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
 }
 
 - (void)performFetch
@@ -110,10 +113,13 @@
     }
     
     if (location.placemark != nil) {
-        locationCell.addressLabel.text = [NSString stringWithFormat:@"%@ %@, %@",
-                                          location.placemark.subThoroughfare,
-                                          location.placemark.thoroughfare,
-                                          location.placemark.locality];
+        NSMutableString *string = [NSMutableString stringWithCapacity:100];
+        
+        [string addText:location.placemark.subThoroughfare withSeparator:@""];
+        [string addText:location.placemark.thoroughfare withSeparator:@" "];
+        [string addText:location.placemark.locality withSeparator:@", "];
+        
+        locationCell.addressLabel.text = string;
     } else {
         locationCell.addressLabel.text = [NSString stringWithFormat:@"Lat: %.8f, Long: %.8f",
                                           [location.latitude doubleValue],
@@ -128,14 +134,51 @@
         }
     }
     
+    if (image == nil) {
+        image = [UIImage imageNamed:@"No Photo"];
+    }
+    
     locationCell.photoImageView.image = image;
+    
+    locationCell.backgroundColor = [UIColor blackColor];
+    locationCell.descriptionLabel.textColor = [UIColor whiteColor];
+    locationCell.descriptionLabel.highlightedTextColor = locationCell.descriptionLabel.textColor;
+    locationCell.addressLabel.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    locationCell.addressLabel.highlightedTextColor = locationCell.addressLabel.textColor;
+    
+    UIView *selectionView = [[UIView alloc] initWithFrame:CGRectZero];
+    selectionView.backgroundColor = [UIColor colorWithWhite:1.0f alpha:0.2f];
+    locationCell.selectedBackgroundView = selectionView;
+    
+    locationCell.photoImageView.layer.cornerRadius = locationCell.photoImageView.bounds.size.width / 2.0f;
+    locationCell.photoImageView.clipsToBounds = YES;
+    locationCell.separatorInset = UIEdgeInsetsMake(0, 82, 0, 0);
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(15.0f, tableView.sectionHeaderHeight - 14.0f, 300.0f, 14.0f)];
+    label.font = [UIFont boldSystemFontOfSize:11.0f];
+    label.text = [tableView.dataSource tableView:tableView titleForHeaderInSection:section];
+    label.textColor = [UIColor colorWithWhite:1.0f alpha:0.4f];
+    label.backgroundColor = [UIColor clearColor];
+    
+    UIView *separator = [[UIView alloc] initWithFrame:CGRectMake(15.0f, tableView.sectionHeaderHeight - 0.5f, tableView.bounds.size.width - 15.0f, 0.5f)];
+    separator.backgroundColor = tableView.separatorColor;
+    
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, tableView.bounds.size.width, tableView.sectionHeaderHeight)];
+    view.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.85f];
+    [view addSubview:label];
+    [view addSubview:separator];
+    
+    return view;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     
-    return [sectionInfo name];
+    return [[sectionInfo name] uppercaseString];
 }
 
 /*

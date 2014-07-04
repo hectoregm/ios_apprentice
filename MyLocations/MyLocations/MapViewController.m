@@ -127,26 +127,27 @@
 {
     if ([annotation isKindOfClass:[Location class]]) {
         static NSString *identifier = @"Location";
-        MKPinAnnotationView *annotationVIew = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
         
-        if (annotationVIew == nil) {
-            annotationVIew = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+        if (annotationView == nil) {
+            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             
-            annotationVIew.enabled = YES;
-            annotationVIew.canShowCallout = YES;
-            annotationVIew.animatesDrop = NO;
-            annotationVIew.pinColor = MKPinAnnotationColorGreen;
+            annotationView.enabled = YES;
+            annotationView.canShowCallout = YES;
+            annotationView.animatesDrop = NO;
+            annotationView.pinColor = MKPinAnnotationColorGreen;
+            annotationView.tintColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
             
             UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             [rightButton addTarget:self action:@selector(showLocationDetails:) forControlEvents:UIControlEventTouchUpInside];
-            annotationVIew.rightCalloutAccessoryView = rightButton;
+            annotationView.rightCalloutAccessoryView = rightButton;
         } else {
-            annotationVIew.annotation = annotation;
+            annotationView.annotation = annotation;
         }
         
-        UIButton *button = (UIButton *)annotationVIew.rightCalloutAccessoryView;
+        UIButton *button = (UIButton *)annotationView.rightCalloutAccessoryView;
         button.tag = [_locations indexOfObject:(Location *)annotation];
-        return annotationVIew;
+        return annotationView;
     }
     
     return nil;

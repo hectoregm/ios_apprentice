@@ -31,6 +31,11 @@
 		F9AD17F91961FBE700504B44 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AD17F81961FBE700504B44 /* CoreData.framework */; };
 		F9AD17FC1961FC2200504B44 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17FA1961FC2200504B44 /* DataModel.xcdatamodeld */; };
 		F9AD17FF1961FDED00504B44 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD17FE1961FDED00504B44 /* Location.m */; };
+		F9AD1EC3196634F50083A09D /* NSMutableString+AddText.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1EC2196634F50083A09D /* NSMutableString+AddText.m */; };
+		F9AD1EC619663CA00083A09D /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1EC519663CA00083A09D /* MyTabBarController.m */; };
+		F9AD1EC919663D580083A09D /* MyNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AD1EC819663D580083A09D /* MyNavigationController.m */; };
+		F9AD1ECB19666CE80083A09D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9AD1ECA19666CE80083A09D /* AudioToolbox.framework */; };
+		F9AD1ECE19666D130083A09D /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = F9AD1ECD19666D130083A09D /* Sound.caf */; };
 		F9B65F75196347C4009F1B4B /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B65F74196347C4009F1B4B /* LocationsViewController.m */; };
 		F9B65F7919634D24009F1B4B /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9B65F7819634D24009F1B4B /* LocationCell.m */; };
 /* End PBXBuildFile section */
@@ -81,6 +86,14 @@
 		F9AD17FB1961FC2200504B44 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		F9AD17FD1961FDED00504B44 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
 		F9AD17FE1961FDED00504B44 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		F9AD1EC1196634F50083A09D /* NSMutableString+AddText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+AddText.h"; sourceTree = "<group>"; };
+		F9AD1EC2196634F50083A09D /* NSMutableString+AddText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+AddText.m"; sourceTree = "<group>"; };
+		F9AD1EC419663CA00083A09D /* MyTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		F9AD1EC519663CA00083A09D /* MyTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
+		F9AD1EC719663D580083A09D /* MyNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationController.h; sourceTree = "<group>"; };
+		F9AD1EC819663D580083A09D /* MyNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationController.m; sourceTree = "<group>"; };
+		F9AD1ECA19666CE80083A09D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		F9AD1ECD19666D130083A09D /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		F9B65F73196347C4009F1B4B /* LocationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationsViewController.h; sourceTree = "<group>"; };
 		F9B65F74196347C4009F1B4B /* LocationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
 		F9B65F7719634D24009F1B4B /* LocationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationCell.h; sourceTree = "<group>"; };
@@ -92,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9AD1ECB19666CE80083A09D /* AudioToolbox.framework in Frameworks */,
 				F94328A119642D17008488EE /* MapKit.framework in Frameworks */,
 				F9AD17F91961FBE700504B44 /* CoreData.framework in Frameworks */,
 				F94BAFAF195F0321004F67AA /* CoreLocation.framework in Frameworks */,
@@ -117,6 +131,7 @@
 		F97A0559195DFEB40039359A = {
 			isa = PBXGroup;
 			children = (
+				F9AD1ECC19666D130083A09D /* Sound */,
 				F97A056B195DFEB40039359A /* MyLocations */,
 				F97A058D195DFEB50039359A /* MyLocationsTests */,
 				F97A0564195DFEB40039359A /* Frameworks */,
@@ -136,6 +151,7 @@
 		F97A0564195DFEB40039359A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9AD1ECA19666CE80083A09D /* AudioToolbox.framework */,
 				F94328A019642D17008488EE /* MapKit.framework */,
 				F9AD17F81961FBE700504B44 /* CoreData.framework */,
 				F94BAFAE195F0321004F67AA /* CoreLocation.framework */,
@@ -165,8 +181,14 @@
 				F9B65F74196347C4009F1B4B /* LocationsViewController.m */,
 				F94328A219642DE3008488EE /* MapViewController.h */,
 				F94328A319642DE3008488EE /* MapViewController.m */,
+				F9AD1EC419663CA00083A09D /* MyTabBarController.h */,
+				F9AD1EC519663CA00083A09D /* MyTabBarController.m */,
+				F9AD1EC719663D580083A09D /* MyNavigationController.h */,
+				F9AD1EC819663D580083A09D /* MyNavigationController.m */,
 				F91C523D1964B13700975764 /* UIImage+Resize.h */,
 				F91C523E1964B13700975764 /* UIImage+Resize.m */,
+				F9AD1EC1196634F50083A09D /* NSMutableString+AddText.h */,
+				F9AD1EC2196634F50083A09D /* NSMutableString+AddText.m */,
 				F97A0580195DFEB40039359A /* Images.xcassets */,
 				F9B65F76196347DA009F1B4B /* Model */,
 				F97A056C195DFEB40039359A /* Supporting Files */,
@@ -203,6 +225,14 @@
 				F97A0590195DFEB50039359A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9AD1ECC19666D130083A09D /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F9AD1ECD19666D130083A09D /* Sound.caf */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		F9B65F76196347DA009F1B4B /* Model */ = {
@@ -293,6 +323,7 @@
 			files = (
 				F97A0581195DFEB40039359A /* Images.xcassets in Resources */,
 				F97A0570195DFEB40039359A /* InfoPlist.strings in Resources */,
+				F9AD1ECE19666D130083A09D /* Sound.caf in Resources */,
 				F97A0579195DFEB40039359A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -317,12 +348,15 @@
 				F97A057C195DFEB40039359A /* CurrentLocationViewController.m in Sources */,
 				F9AD17FF1961FDED00504B44 /* Location.m in Sources */,
 				F97A0572195DFEB40039359A /* main.m in Sources */,
+				F9AD1EC619663CA00083A09D /* MyTabBarController.m in Sources */,
 				F91C523F1964B13700975764 /* UIImage+Resize.m in Sources */,
 				F9AD17F71961DD2100504B44 /* HudView.m in Sources */,
 				F9B65F75196347C4009F1B4B /* LocationsViewController.m in Sources */,
+				F9AD1EC919663D580083A09D /* MyNavigationController.m in Sources */,
 				F9AD17F41961033200504B44 /* CategoryPickerViewController.m in Sources */,
 				F9B65F7919634D24009F1B4B /* LocationCell.m in Sources */,
 				F9AD17F11960F2BB00504B44 /* LocationDetailsViewController.m in Sources */,
+				F9AD1EC3196634F50083A09D /* NSMutableString+AddText.m in Sources */,
 				F94328A419642DE3008488EE /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
