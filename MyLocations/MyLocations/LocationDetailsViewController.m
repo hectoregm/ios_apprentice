@@ -73,6 +73,13 @@
     
     if (self.locationToEdit != nil) {
         self.title = @"Edit Location";
+        
+        if ([self.locationToEdit hasPhoto]) {
+            UIImage *existingImage = [self.locationToEdit photoImage];
+            if (existingImage != nil) {
+                [self showImage:existingImage];
+            }
+        }
     }
     
     self.descriptionTextView.text = _descriptionText;
@@ -110,6 +117,7 @@
         hudView.text = @"Tagged";
         location = [NSEntityDescription insertNewObjectForEntityForName:@"Location"
                                                  inManagedObjectContext:self.managedObjectContext];
+        location.photoId = @-1;
     }
     
     location.locationDescription = _descriptionText;
@@ -118,6 +126,19 @@
     location.longitude = @(self.coordinate.longitude);
     location.date = _date;
     location.placemark = self.placemark;
+    
+    if (_image != nil) {
+        if (![location hasPhoto]) {
+            location.photoId = @([Location nextPhotoId]);
+        }
+        
+        NSData *data = UIImageJPEGRepresentation(_image, 0.5);
+        NSError *error;
+        if (![data writeToFile:[location photoPath]
+                       options:NSDataWritingAtomic error:&error]) {
+            NSLog(@"Error writing file: %@", error);
+        }
+    }
     
     NSError *error;
     if (![self.managedObjectContext save:&error]) {

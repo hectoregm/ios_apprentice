@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F91C523F1964B13700975764 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = F91C523E1964B13700975764 /* UIImage+Resize.m */; };
 		F94328A119642D17008488EE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94328A019642D17008488EE /* MapKit.framework */; };
 		F94328A419642DE3008488EE /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F94328A319642DE3008488EE /* MapViewController.m */; };
 		F94BAFAF195F0321004F67AA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F94BAFAE195F0321004F67AA /* CoreLocation.framework */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F91C523D1964B13700975764 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		F91C523E1964B13700975764 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
 		F94328A019642D17008488EE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		F94328A219642DE3008488EE /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		F94328A319642DE3008488EE /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				F9B65F74196347C4009F1B4B /* LocationsViewController.m */,
 				F94328A219642DE3008488EE /* MapViewController.h */,
 				F94328A319642DE3008488EE /* MapViewController.m */,
+				F91C523D1964B13700975764 /* UIImage+Resize.h */,
+				F91C523E1964B13700975764 /* UIImage+Resize.m */,
 				F97A0580195DFEB40039359A /* Images.xcassets */,
 				F9B65F76196347DA009F1B4B /* Model */,
 				F97A056C195DFEB40039359A /* Supporting Files */,
@@ -312,6 +317,7 @@
 				F97A057C195DFEB40039359A /* CurrentLocationViewController.m in Sources */,
 				F9AD17FF1961FDED00504B44 /* Location.m in Sources */,
 				F97A0572195DFEB40039359A /* main.m in Sources */,
+				F91C523F1964B13700975764 /* UIImage+Resize.m in Sources */,
 				F9AD17F71961DD2100504B44 /* HudView.m in Sources */,
 				F9B65F75196347C4009F1B4B /* LocationsViewController.m in Sources */,
 				F9AD17F41961033200504B44 /* CategoryPickerViewController.m in Sources */,

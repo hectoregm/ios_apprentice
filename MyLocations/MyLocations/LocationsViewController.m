@@ -10,6 +10,7 @@
 #import "LocationDetailsViewController.h"
 #import "Location.h"
 #import "LocationCell.h"
+#import "UIImage+Resize.h"
 
 @interface LocationsViewController () <NSFetchedResultsControllerDelegate>
 //@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
@@ -118,6 +119,16 @@
                                           [location.latitude doubleValue],
                                           [location.longitude doubleValue]];
     }
+    
+    UIImage *image = nil;
+    if ([location hasPhoto]) {
+        image = [location photoImage];
+        if (image != nil) {
+            image = [image resizedImageWithBounds:CGSizeMake(52, 52)];
+        }
+    }
+    
+    locationCell.photoImageView.image = image;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -142,6 +153,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         Location *location = [self.fetchedResultsController objectAtIndexPath:indexPath];
         
+        [location removePhotoFile];
         [self.managedObjectContext deleteObject:location];
         
         NSError *error;
