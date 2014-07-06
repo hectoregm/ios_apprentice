@@ -13,14 +13,14 @@
 		F994D3C61968CF16000A3A34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F994D3C41968CF16000A3A34 /* InfoPlist.strings */; };
 		F994D3C81968CF16000A3A34 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3C71968CF16000A3A34 /* main.m */; };
 		F994D3CC1968CF16000A3A34 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3CB1968CF16000A3A34 /* AppDelegate.m */; };
-		F994D3CF1968CF16000A3A34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F994D3CD1968CF16000A3A34 /* Main.storyboard */; };
-		F994D3D21968CF16000A3A34 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3D11968CF16000A3A34 /* ViewController.m */; };
 		F994D3D41968CF16000A3A34 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F994D3D31968CF16000A3A34 /* Images.xcassets */; };
 		F994D3DB1968CF16000A3A34 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3DA1968CF16000A3A34 /* XCTest.framework */; };
 		F994D3DC1968CF16000A3A34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BB1968CF16000A3A34 /* Foundation.framework */; };
 		F994D3DD1968CF16000A3A34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BF1968CF16000A3A34 /* UIKit.framework */; };
 		F994D3E51968CF16000A3A34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F994D3E31968CF16000A3A34 /* InfoPlist.strings */; };
 		F994D3E71968CF16000A3A34 /* StoreSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3E61968CF16000A3A34 /* StoreSearchTests.m */; };
+		F994D3F31968D06E000A3A34 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3F11968D06E000A3A34 /* SearchViewController.m */; };
+		F994D3F41968D06E000A3A34 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F994D3F21968D06E000A3A34 /* SearchViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +44,15 @@
 		F994D3C91968CF16000A3A34 /* StoreSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StoreSearch-Prefix.pch"; sourceTree = "<group>"; };
 		F994D3CA1968CF16000A3A34 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F994D3CB1968CF16000A3A34 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F994D3CE1968CF16000A3A34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F994D3D01968CF16000A3A34 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F994D3D11968CF16000A3A34 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F994D3D31968CF16000A3A34 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F994D3D91968CF16000A3A34 /* StoreSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StoreSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F994D3DA1968CF16000A3A34 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F994D3E21968CF16000A3A34 /* StoreSearchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StoreSearchTests-Info.plist"; sourceTree = "<group>"; };
 		F994D3E41968CF16000A3A34 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F994D3E61968CF16000A3A34 /* StoreSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreSearchTests.m; sourceTree = "<group>"; };
+		F994D3F01968D06E000A3A34 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F994D3F11968D06E000A3A34 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		F994D3F21968D06E000A3A34 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +112,9 @@
 		F994D3C11968CF16000A3A34 /* StoreSearch */ = {
 			isa = PBXGroup;
 			children = (
-				F994D3CA1968CF16000A3A34 /* AppDelegate.h */,
-				F994D3CB1968CF16000A3A34 /* AppDelegate.m */,
-				F994D3CD1968CF16000A3A34 /* Main.storyboard */,
-				F994D3D01968CF16000A3A34 /* ViewController.h */,
-				F994D3D11968CF16000A3A34 /* ViewController.m */,
+				F994D3F01968D06E000A3A34 /* SearchViewController.h */,
+				F994D3F11968D06E000A3A34 /* SearchViewController.m */,
+				F994D3F21968D06E000A3A34 /* SearchViewController.xib */,
 				F994D3D31968CF16000A3A34 /* Images.xcassets */,
 				F994D3C21968CF16000A3A34 /* Supporting Files */,
 			);
@@ -126,6 +124,8 @@
 		F994D3C21968CF16000A3A34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F994D3CA1968CF16000A3A34 /* AppDelegate.h */,
+				F994D3CB1968CF16000A3A34 /* AppDelegate.m */,
 				F994D3C31968CF16000A3A34 /* StoreSearch-Info.plist */,
 				F994D3C41968CF16000A3A34 /* InfoPlist.strings */,
 				F994D3C71968CF16000A3A34 /* main.m */,
@@ -230,7 +230,7 @@
 			files = (
 				F994D3D41968CF16000A3A34 /* Images.xcassets in Resources */,
 				F994D3C61968CF16000A3A34 /* InfoPlist.strings in Resources */,
-				F994D3CF1968CF16000A3A34 /* Main.storyboard in Resources */,
+				F994D3F41968D06E000A3A34 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F994D3D21968CF16000A3A34 /* ViewController.m in Sources */,
 				F994D3CC1968CF16000A3A34 /* AppDelegate.m in Sources */,
+				F994D3F31968D06E000A3A34 /* SearchViewController.m in Sources */,
 				F994D3C81968CF16000A3A34 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,14 +280,6 @@
 				F994D3C51968CF16000A3A34 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		F994D3CD1968CF16000A3A34 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F994D3CE1968CF16000A3A34 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		F994D3E31968CF16000A3A34 /* InfoPlist.strings */ = {
