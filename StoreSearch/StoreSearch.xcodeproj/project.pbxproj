@@ -25,6 +25,7 @@
 		F994D3F91968DE58000A3A34 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F994D3F81968DE58000A3A34 /* SearchResultCell.xib */; };
 		F994D3FC1968E0A5000A3A34 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3FB1968E0A5000A3A34 /* SearchResultCell.m */; };
 		F994D3FE1968E264000A3A34 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */; };
+		F9C2D70C196C2E7100C31C40 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F994D3FA1968E0A5000A3A34 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		F994D3FB1968E0A5000A3A34 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
 		F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
+		F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				F994D3FB1968E0A5000A3A34 /* SearchResultCell.m */,
 				F994D3F81968DE58000A3A34 /* SearchResultCell.xib */,
 				F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */,
+				F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */,
 				F994D3D31968CF16000A3A34 /* Images.xcassets */,
 				F994D3C21968CF16000A3A34 /* Supporting Files */,
 			);
@@ -246,6 +249,7 @@
 			files = (
 				F994D3D41968CF16000A3A34 /* Images.xcassets in Resources */,
 				F994D3C61968CF16000A3A34 /* InfoPlist.strings in Resources */,
+				F9C2D70C196C2E7100C31C40 /* LoadingCell.xib in Resources */,
 				F994D3F91968DE58000A3A34 /* SearchResultCell.xib in Resources */,
 				F994D3FE1968E264000A3A34 /* NothingFoundCell.xib in Resources */,
 				F994D3F41968D06E000A3A34 /* SearchViewController.xib in Resources */,
@@ -468,6 +472,7 @@
 				F994D3EC1968CF16000A3A34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F994D3ED1968CF16000A3A34 /* Build configuration list for PBXNativeTarget "StoreSearchTests" */ = {
 			isa = XCConfigurationList;
@@ -476,6 +481,7 @@
 				F994D3EF1968CF16000A3A34 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
