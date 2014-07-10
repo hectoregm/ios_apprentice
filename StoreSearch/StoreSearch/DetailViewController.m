@@ -8,6 +8,8 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "DetailViewController.h"
+#import "SearchResult.h"
+#import <AFNetworking/UIImageView+AFNetworking.h>
 
 @interface DetailViewController () <UIGestureRecognizerDelegate>
 @property (nonatomic, weak) IBOutlet UIView *popupView;
@@ -33,6 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    if (self.searchResult != nil) {
+        [self updateUI];
+    }
     
     self.popupView.layer.cornerRadius = 10.0f;
     
@@ -46,6 +53,38 @@
     gestureRecognizer.cancelsTouchesInView = NO;
     gestureRecognizer.delegate = self;
     [self.view addGestureRecognizer:gestureRecognizer];
+}
+
+- (void)updateUI
+{
+    self.nameLabel.text = self.searchResult.name;
+    NSString *artistName = self.searchResult.artistName;
+    if (artistName == nil) {
+        artistName = @"Unknown";
+    }
+    self.artistNameLabel.text = artistName;
+    self.kindLabel.text = [self.searchResult kindForDisplay];
+    self.genreLabel.text = self.searchResult.genre;
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setCurrencyCode:self.searchResult.currency];
+    
+    NSString *priceText;
+    if ([self.searchResult.price floatValue] == 0.0f) {
+        priceText = @"Free";
+    } else {
+        priceText = [formatter stringFromNumber:self.searchResult.price];
+    }
+    
+    [self.priceButton setTitle:priceText forState:UIControlStateNormal];
+    
+    [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.artworkURL100] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
+}
+
+- (IBAction)openInStore:(id)sender
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.searchResult.storeURL]];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
@@ -63,6 +102,7 @@
 - (void)dealloc
 {
     NSLog(@"dealloc %@", self);
+    [self.artworkImageView cancelImageRequestOperation];
 }
 
 @end

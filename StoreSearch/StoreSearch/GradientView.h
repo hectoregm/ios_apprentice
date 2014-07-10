@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  GradientView.h
 //  StoreSearch
 //
 //  Created by Hector Enrique Gomez Morales on 7/9/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class SearchResult;
+@interface GradientView : UIView
 
-@interface DetailViewController : UIViewController
-@property (nonatomic, strong) SearchResult *searchResult;
 @end
