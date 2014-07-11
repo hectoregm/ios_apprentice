@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E733691AFF94CCB9572EF88 /* libPods-StoreSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */; };
+		F924830B196F5C7500D02FFE /* LandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9248309196F5C7500D02FFE /* LandscapeViewController.m */; };
+		F924830C196F5C7500D02FFE /* LandscapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924830A196F5C7500D02FFE /* LandscapeViewController.xib */; };
 		F994D3BC1968CF16000A3A34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BB1968CF16000A3A34 /* Foundation.framework */; };
 		F994D3BE1968CF16000A3A34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */; };
 		F994D3C01968CF16000A3A34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BF1968CF16000A3A34 /* UIKit.framework */; };
@@ -45,6 +47,9 @@
 /* Begin PBXFileReference section */
 		1929EE9B381342B4BA262692 /* Pods-StoreSearch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreSearch.xcconfig"; path = "Pods/Pods-StoreSearch.xcconfig"; sourceTree = "<group>"; };
 		67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StoreSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9248308196F5C7500D02FFE /* LandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeViewController.h; sourceTree = "<group>"; };
+		F9248309196F5C7500D02FFE /* LandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeViewController.m; sourceTree = "<group>"; };
+		F924830A196F5C7500D02FFE /* LandscapeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandscapeViewController.xib; sourceTree = "<group>"; };
 		F994D3B81968CF16000A3A34 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F994D3BB1968CF16000A3A34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -144,6 +149,9 @@
 				F9EB7D1F196DC7940002ED50 /* DetailViewController.h */,
 				F9EB7D20196DC7940002ED50 /* DetailViewController.m */,
 				F9EB7D21196DC7940002ED50 /* DetailViewController.xib */,
+				F9248308196F5C7500D02FFE /* LandscapeViewController.h */,
+				F9248309196F5C7500D02FFE /* LandscapeViewController.m */,
+				F924830A196F5C7500D02FFE /* LandscapeViewController.xib */,
 				F994D3F51968D835000A3A34 /* SearchResult.h */,
 				F994D3F61968D835000A3A34 /* SearchResult.m */,
 				F994D3FA1968E0A5000A3A34 /* SearchResultCell.h */,
@@ -151,10 +159,10 @@
 				F994D3F81968DE58000A3A34 /* SearchResultCell.xib */,
 				F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */,
 				F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */,
-				F994D3D31968CF16000A3A34 /* Images.xcassets */,
-				F994D3C21968CF16000A3A34 /* Supporting Files */,
 				F9E0675C196E0FD600AC2F82 /* GradientView.h */,
 				F9E0675D196E0FD600AC2F82 /* GradientView.m */,
+				F994D3D31968CF16000A3A34 /* Images.xcassets */,
+				F994D3C21968CF16000A3A34 /* Supporting Files */,
 			);
 			path = StoreSearch;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 				F9C2D70C196C2E7100C31C40 /* LoadingCell.xib in Resources */,
 				F994D3F91968DE58000A3A34 /* SearchResultCell.xib in Resources */,
 				F994D3FE1968E264000A3A34 /* NothingFoundCell.xib in Resources */,
+				F924830C196F5C7500D02FFE /* LandscapeViewController.xib in Resources */,
 				F994D3F41968D06E000A3A34 /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +341,7 @@
 				F994D3F71968D835000A3A34 /* SearchResult.m in Sources */,
 				F994D3C81968CF16000A3A34 /* main.m in Sources */,
 				F9E0675E196E0FD600AC2F82 /* GradientView.m in Sources */,
+				F924830B196F5C7500D02FFE /* LandscapeViewController.m in Sources */,
 				F9EB7D22196DC7940002ED50 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

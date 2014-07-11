@@ -26,7 +26,7 @@
                         <outlet property="delegate" destination="-1" id="Kst-33-2Ir"/>
                     </connections>
                 </tableView>
-                <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-bb-aOK">
+                <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Or-bb-aOK">
                     <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="barTintColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
@@ -49,7 +49,7 @@
                         </navigationItem>
                     </items>
                 </navigationBar>
-                <searchBar contentMode="redraw" fixedFrame="YES" placeholder="App name, artist, song, album, ebook" translatesAutoresizingMaskIntoConstraints="NO" id="vRn-z1-Pcj">
+                <searchBar contentMode="redraw" placeholder="App name, artist, song, album, ebook" translatesAutoresizingMaskIntoConstraints="NO" id="vRn-z1-Pcj">
                     <rect key="frame" x="0.0" y="20" width="320" height="44"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <textInputTraits key="textInputTraits"/>
@@ -60,10 +60,16 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="4Or-bb-aOK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3zZ-DA-bGf"/>
                 <constraint firstItem="AHJ-gC-xNA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8p1-hg-o2p"/>
+                <constraint firstItem="vRn-z1-Pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="AQj-yc-2Lx"/>
                 <constraint firstItem="AHJ-gC-xNA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FNB-VR-oss"/>
                 <constraint firstAttribute="bottom" secondItem="AHJ-gC-xNA" secondAttribute="bottom" id="R3d-bt-cHn"/>
+                <constraint firstAttribute="trailing" secondItem="4Or-bb-aOK" secondAttribute="trailing" id="dGE-EQ-xzu"/>
+                <constraint firstItem="vRn-z1-Pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="erh-vV-bbM"/>
                 <constraint firstAttribute="trailing" secondItem="AHJ-gC-xNA" secondAttribute="trailing" id="o5l-pE-YJB"/>
+                <constraint firstItem="4Or-bb-aOK" firstAttribute="top" secondItem="vRn-z1-Pcj" secondAttribute="bottom" id="scd-Rc-OEM"/>
+                <constraint firstAttribute="trailing" secondItem="vRn-z1-Pcj" secondAttribute="trailing" id="wel-fP-9SK"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

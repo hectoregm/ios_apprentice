@@ -9,6 +9,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "SearchViewController.h"
 #import "DetailViewController.h"
+#import "LandscapeViewController.h"
 #import "SearchResult.h"
 #import "SearchResultCell.h"
 
@@ -27,6 +28,14 @@ static NSString * const LoadingCellIdentifier = @"LoadingCell";
     NSMutableArray *_searchResults;
     BOOL _isLoading;
     NSOperationQueue *_queue;
+    LandscapeViewController *_landscapeViewController;
+    __weak DetailViewController *_detailViewController;
+    UIStatusBarStyle _statusBarStyle;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return _statusBarStyle;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -41,6 +50,9 @@ static NSString * const LoadingCellIdentifier = @"LoadingCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _statusBarStyle = UIStatusBarStyleDefault;
+    
     self.tableView.contentInset = UIEdgeInsetsMake(108, 0, 0, 0);
     self.tableView.rowHeight = 80;
 
@@ -54,6 +66,57 @@ static NSString * const LoadingCellIdentifier = @"LoadingCell";
     [self.tableView registerNib:cellNib forCellReuseIdentifier:LoadingCellIdentifier];
     
     [self.searchBar becomeFirstResponder];
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+    
+    if (UIInterfaceOrientationIsPortrait(toInterfaceOrientation)) {
+        [self hideLandscapeViewWithDuration:duration];
+    } else {
+        [self showLandscapeViewWithDuration:duration];
+    }
+}
+
+- (void)showLandscapeViewWithDuration:(NSTimeInterval)duration
+{
+    if (_landscapeViewController == nil) {
+        [self.searchBar resignFirstResponder];
+        _landscapeViewController = [[LandscapeViewController alloc] initWithNibName:@"LandscapeViewController" bundle:nil];
+        _landscapeViewController.searchResults = _searchResults;
+        _landscapeViewController.view.frame = self.view.bounds;
+        _landscapeViewController.view.alpha = 0.0f;
+        
+        [self.view addSubview:_landscapeViewController.view];
+        [self addChildViewController:_landscapeViewController];
+        
+        [UIView animateWithDuration:duration animations:^{
+            _landscapeViewController.view.alpha = 1.0f;
+            _statusBarStyle = UIStatusBarStyleLightContent;
+            [self setNeedsStatusBarAppearanceUpdate];
+        } completion:^(BOOL finished){
+            [_landscapeViewController didMoveToParentViewController:self];
+        }];
+        [_detailViewController dismissFromParentViewController:DetailViewControllerAnimationTypeFade];
+    }
+}
+
+- (void)hideLandscapeViewWithDuration:(NSTimeInterval)duration
+{
+    if (_landscapeViewController != nil) {
+        [_landscapeViewController willMoveToParentViewController:nil];
+        
+        [UIView animateWithDuration:duration animations:^{
+            _landscapeViewController.view.alpha = 0.0f;
+            _statusBarStyle = UIStatusBarStyleDefault;
+            [self setNeedsStatusBarAppearanceUpdate];
+        } completion:^(BOOL finished) {
+            [_landscapeViewController.view removeFromSuperview];
+            [_landscapeViewController removeFromParentViewController];
+            _landscapeViewController = nil;
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -101,6 +164,7 @@ static NSString * const LoadingCellIdentifier = @"LoadingCell";
     DetailViewController *controller = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     controller.searchResult = _searchResults[indexPath.row];
     [controller presentInParentViewController:self];
+    _detailViewController = controller;
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
