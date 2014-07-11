@@ -1,0 +1,15 @@
+
+/* Class = "IBUISegmentedControl"; ku7-Bu-r9c.segmentTitles[0] = "All"; ObjectID = "ku7-Bu-r9c"; */
+"ku7-Bu-r9c.segmentTitles[0]" = "Alles";
+
+/* Class = "IBUISegmentedControl"; ku7-Bu-r9c.segmentTitles[1] = "Music"; ObjectID = "ku7-Bu-r9c"; */
+"ku7-Bu-r9c.segmentTitles[1]" = "Muziek";
+
+/* Class = "IBUISegmentedControl"; ku7-Bu-r9c.segmentTitles[2] = "Sofware"; ObjectID = "ku7-Bu-r9c"; */
+"ku7-Bu-r9c.segmentTitles[2]" = "Sofware";
+
+/* Class = "IBUISegmentedControl"; ku7-Bu-r9c.segmentTitles[3] = "E-Books"; ObjectID = "ku7-Bu-r9c"; */
+"ku7-Bu-r9c.segmentTitles[3]" = "E-Boeken";
+
+/* Class = "IBUISearchBar"; placeholder = "App name, artist, song, album, ebook"; ObjectID = "vRn-z1-Pcj"; */
+"vRn-z1-Pcj.placeholder" = "Naam van artiest, nummer, album";

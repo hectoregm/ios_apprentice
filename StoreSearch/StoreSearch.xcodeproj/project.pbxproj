@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4E733691AFF94CCB9572EF88 /* libPods-StoreSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */; };
+		F91ECBE6196F89C900753A98 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91ECBE8196F89C900753A98 /* NothingFoundCell.xib */; };
+		F91ECBEB196F8C8600753A98 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91ECBED196F8C8600753A98 /* LoadingCell.xib */; };
 		F924830B196F5C7500D02FFE /* LandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9248309196F5C7500D02FFE /* LandscapeViewController.m */; };
-		F924830C196F5C7500D02FFE /* LandscapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924830A196F5C7500D02FFE /* LandscapeViewController.xib */; };
 		F924830F196F7A3200D02FFE /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = F924830E196F7A3200D02FFE /* Search.m */; };
+		F9311575196F916F009BFEC4 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9311577196F916F009BFEC4 /* SearchResultCell.xib */; };
+		F9311578196F9178009BFEC4 /* LandscapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F931157A196F9178009BFEC4 /* LandscapeViewController.xib */; };
+		F931157D196F92FD009BFEC4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F931157B196F92FD009BFEC4 /* Localizable.strings */; };
 		F994D3BC1968CF16000A3A34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BB1968CF16000A3A34 /* Foundation.framework */; };
 		F994D3BE1968CF16000A3A34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */; };
 		F994D3C01968CF16000A3A34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BF1968CF16000A3A34 /* UIKit.framework */; };
@@ -24,15 +28,12 @@
 		F994D3E51968CF16000A3A34 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F994D3E31968CF16000A3A34 /* InfoPlist.strings */; };
 		F994D3E71968CF16000A3A34 /* StoreSearchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3E61968CF16000A3A34 /* StoreSearchTests.m */; };
 		F994D3F31968D06E000A3A34 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3F11968D06E000A3A34 /* SearchViewController.m */; };
-		F994D3F41968D06E000A3A34 /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F994D3F21968D06E000A3A34 /* SearchViewController.xib */; };
 		F994D3F71968D835000A3A34 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3F61968D835000A3A34 /* SearchResult.m */; };
-		F994D3F91968DE58000A3A34 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F994D3F81968DE58000A3A34 /* SearchResultCell.xib */; };
 		F994D3FC1968E0A5000A3A34 /* SearchResultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F994D3FB1968E0A5000A3A34 /* SearchResultCell.m */; };
-		F994D3FE1968E264000A3A34 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */; };
-		F9C2D70C196C2E7100C31C40 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */; };
+		F9BEB715196F8EA0003E8C3F /* SearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BEB717196F8EA0003E8C3F /* SearchViewController.xib */; };
+		F9BEB721196F9000003E8C3F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9BEB723196F9000003E8C3F /* DetailViewController.xib */; };
 		F9E0675E196E0FD600AC2F82 /* GradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9E0675D196E0FD600AC2F82 /* GradientView.m */; };
 		F9EB7D22196DC7940002ED50 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9EB7D20196DC7940002ED50 /* DetailViewController.m */; };
-		F9EB7D23196DC7940002ED50 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9EB7D21196DC7940002ED50 /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,11 +49,18 @@
 /* Begin PBXFileReference section */
 		1929EE9B381342B4BA262692 /* Pods-StoreSearch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreSearch.xcconfig"; path = "Pods/Pods-StoreSearch.xcconfig"; sourceTree = "<group>"; };
 		67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StoreSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F91ECBEA196F8C5100753A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NothingFoundCell.xib; sourceTree = "<group>"; };
+		F91ECBEC196F8C8600753A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadingCell.xib; sourceTree = "<group>"; };
+		F91ECBEF196F8CCF00753A98 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LoadingCell.strings; sourceTree = "<group>"; };
 		F9248308196F5C7500D02FFE /* LandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeViewController.h; sourceTree = "<group>"; };
 		F9248309196F5C7500D02FFE /* LandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeViewController.m; sourceTree = "<group>"; };
-		F924830A196F5C7500D02FFE /* LandscapeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandscapeViewController.xib; sourceTree = "<group>"; };
 		F924830D196F7A3200D02FFE /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
 		F924830E196F7A3200D02FFE /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
+		F9311576196F916F009BFEC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchResultCell.xib; sourceTree = "<group>"; };
+		F9311579196F9178009BFEC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LandscapeViewController.xib; sourceTree = "<group>"; };
+		F931157C196F92FD009BFEC4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F931157E196F933D009BFEC4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F931157F196F94FD009BFEC4 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F994D3B81968CF16000A3A34 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F994D3BB1968CF16000A3A34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -71,19 +79,19 @@
 		F994D3E61968CF16000A3A34 /* StoreSearchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StoreSearchTests.m; sourceTree = "<group>"; };
 		F994D3F01968D06E000A3A34 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		F994D3F11968D06E000A3A34 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
-		F994D3F21968D06E000A3A34 /* SearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchViewController.xib; sourceTree = "<group>"; };
 		F994D3F51968D835000A3A34 /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
 		F994D3F61968D835000A3A34 /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
-		F994D3F81968DE58000A3A34 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		F994D3FA1968E0A5000A3A34 /* SearchResultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultCell.h; sourceTree = "<group>"; };
 		F994D3FB1968E0A5000A3A34 /* SearchResultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultCell.m; sourceTree = "<group>"; };
-		F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
-		F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		F9BEB716196F8EA0003E8C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SearchViewController.xib; sourceTree = "<group>"; };
+		F9BEB719196F8EC0003E8C3F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/SearchViewController.strings; sourceTree = "<group>"; };
+		F9BEB720196F8FB5003E8C3F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/NothingFoundCell.strings; sourceTree = "<group>"; };
+		F9BEB722196F9000003E8C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		F9BEB725196F9008003E8C3F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/DetailViewController.strings; sourceTree = "<group>"; };
 		F9E0675C196E0FD600AC2F82 /* GradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradientView.h; sourceTree = "<group>"; };
 		F9E0675D196E0FD600AC2F82 /* GradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradientView.m; sourceTree = "<group>"; };
 		F9EB7D1F196DC7940002ED50 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		F9EB7D20196DC7940002ED50 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		F9EB7D21196DC7940002ED50 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,20 +156,20 @@
 			children = (
 				F994D3F01968D06E000A3A34 /* SearchViewController.h */,
 				F994D3F11968D06E000A3A34 /* SearchViewController.m */,
-				F994D3F21968D06E000A3A34 /* SearchViewController.xib */,
+				F9BEB717196F8EA0003E8C3F /* SearchViewController.xib */,
 				F9EB7D1F196DC7940002ED50 /* DetailViewController.h */,
 				F9EB7D20196DC7940002ED50 /* DetailViewController.m */,
-				F9EB7D21196DC7940002ED50 /* DetailViewController.xib */,
+				F9BEB723196F9000003E8C3F /* DetailViewController.xib */,
 				F9248308196F5C7500D02FFE /* LandscapeViewController.h */,
 				F9248309196F5C7500D02FFE /* LandscapeViewController.m */,
-				F924830A196F5C7500D02FFE /* LandscapeViewController.xib */,
+				F931157A196F9178009BFEC4 /* LandscapeViewController.xib */,
 				F994D3F51968D835000A3A34 /* SearchResult.h */,
 				F994D3F61968D835000A3A34 /* SearchResult.m */,
 				F994D3FA1968E0A5000A3A34 /* SearchResultCell.h */,
 				F994D3FB1968E0A5000A3A34 /* SearchResultCell.m */,
-				F994D3F81968DE58000A3A34 /* SearchResultCell.xib */,
-				F994D3FD1968E264000A3A34 /* NothingFoundCell.xib */,
-				F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */,
+				F9311577196F916F009BFEC4 /* SearchResultCell.xib */,
+				F91ECBE8196F89C900753A98 /* NothingFoundCell.xib */,
+				F91ECBED196F8C8600753A98 /* LoadingCell.xib */,
 				F9E0675C196E0FD600AC2F82 /* GradientView.h */,
 				F9E0675D196E0FD600AC2F82 /* GradientView.m */,
 				F924830D196F7A3200D02FFE /* Search.h */,
@@ -175,6 +183,7 @@
 		F994D3C21968CF16000A3A34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F931157B196F92FD009BFEC4 /* Localizable.strings */,
 				F994D3CA1968CF16000A3A34 /* AppDelegate.h */,
 				F994D3CB1968CF16000A3A34 /* AppDelegate.m */,
 				F994D3C31968CF16000A3A34 /* StoreSearch-Info.plist */,
@@ -264,6 +273,7 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = F994D3AF1968CF16000A3A34;
 			productRefGroup = F994D3B91968CF16000A3A34 /* Products */;
@@ -283,12 +293,13 @@
 			files = (
 				F994D3D41968CF16000A3A34 /* Images.xcassets in Resources */,
 				F994D3C61968CF16000A3A34 /* InfoPlist.strings in Resources */,
-				F9EB7D23196DC7940002ED50 /* DetailViewController.xib in Resources */,
-				F9C2D70C196C2E7100C31C40 /* LoadingCell.xib in Resources */,
-				F994D3F91968DE58000A3A34 /* SearchResultCell.xib in Resources */,
-				F994D3FE1968E264000A3A34 /* NothingFoundCell.xib in Resources */,
-				F924830C196F5C7500D02FFE /* LandscapeViewController.xib in Resources */,
-				F994D3F41968D06E000A3A34 /* SearchViewController.xib in Resources */,
+				F9BEB721196F9000003E8C3F /* DetailViewController.xib in Resources */,
+				F91ECBEB196F8C8600753A98 /* LoadingCell.xib in Resources */,
+				F931157D196F92FD009BFEC4 /* Localizable.strings in Resources */,
+				F9311575196F916F009BFEC4 /* SearchResultCell.xib in Resources */,
+				F91ECBE6196F89C900753A98 /* NothingFoundCell.xib in Resources */,
+				F9311578196F9178009BFEC4 /* LandscapeViewController.xib in Resources */,
+				F9BEB715196F8EA0003E8C3F /* SearchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,10 +382,54 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F91ECBE8196F89C900753A98 /* NothingFoundCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91ECBEA196F8C5100753A98 /* Base */,
+				F9BEB720196F8FB5003E8C3F /* nl */,
+			);
+			name = NothingFoundCell.xib;
+			sourceTree = "<group>";
+		};
+		F91ECBED196F8C8600753A98 /* LoadingCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F91ECBEC196F8C8600753A98 /* Base */,
+				F91ECBEF196F8CCF00753A98 /* nl */,
+			);
+			name = LoadingCell.xib;
+			sourceTree = "<group>";
+		};
+		F9311577196F916F009BFEC4 /* SearchResultCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9311576196F916F009BFEC4 /* Base */,
+			);
+			name = SearchResultCell.xib;
+			sourceTree = "<group>";
+		};
+		F931157A196F9178009BFEC4 /* LandscapeViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9311579196F9178009BFEC4 /* Base */,
+			);
+			name = LandscapeViewController.xib;
+			sourceTree = "<group>";
+		};
+		F931157B196F92FD009BFEC4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F931157C196F92FD009BFEC4 /* en */,
+				F931157E196F933D009BFEC4 /* nl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F994D3C41968CF16000A3A34 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F994D3C51968CF16000A3A34 /* en */,
+				F931157F196F94FD009BFEC4 /* nl */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -385,6 +440,24 @@
 				F994D3E41968CF16000A3A34 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9BEB717196F8EA0003E8C3F /* SearchViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9BEB716196F8EA0003E8C3F /* Base */,
+				F9BEB719196F8EC0003E8C3F /* nl */,
+			);
+			name = SearchViewController.xib;
+			sourceTree = "<group>";
+		};
+		F9BEB723196F9000003E8C3F /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9BEB722196F9000003E8C3F /* Base */,
+				F9BEB725196F9008003E8C3F /* nl */,
+			);
+			name = DetailViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
