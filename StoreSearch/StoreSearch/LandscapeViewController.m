@@ -8,6 +8,7 @@
 
 #import "LandscapeViewController.h"
 #import "SearchResult.h"
+#import <AFNetworking/UIButton+AFNetworking.h>
 
 @interface LandscapeViewController () <UIScrollViewDelegate>
 @property (nonatomic, weak) IBOutlet UIScrollView *scrollView;
@@ -72,10 +73,10 @@
     int column = 0;
     
     for (SearchResult *searchResult in self.searchResults) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [self downloadImageForSearchResult:searchResult andPlaceOnButton:button];
+        [button setBackgroundImage:[UIImage imageNamed:@"LandscapeButton"] forState:UIControlStateNormal];
         
-        button.backgroundColor = [UIColor whiteColor];
-        [button setTitle:[NSString stringWithFormat:@"%d", index] forState:UIControlStateNormal];
         button.frame = CGRectMake(x + marginHorz, 20.0f + row*itemHeight + marignVert, buttonWidth, buttonHeight);
         
         [self.scrollView addSubview:button];
@@ -121,9 +122,31 @@
                      completion:nil];
 }
 
+- (void)downloadImageForSearchResult:(SearchResult *)searchResult andPlaceOnButton:(UIButton *)button
+{
+    NSURL *url = [NSURL URLWithString:searchResult.artworkURL60];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request addValue:@"image/*" forHTTPHeaderField:@"Accept"];
+    
+    __weak UIButton *weakButton = button;
+    [button setImageForState:UIControlStateNormal
+              withURLRequest:request
+            placeholderImage:nil
+                     success:^(NSHTTPURLResponse *response, UIImage *image) {
+                         UIImage *unscaledImage = [UIImage imageWithCGImage:image.CGImage
+                                                                      scale:1.0 orientation:image.imageOrientation];
+                         [weakButton setImage:unscaledImage forState:UIControlStateNormal];
+                   } failure:nil];
+}
+
 - (void)dealloc
 {
     NSLog(@"dealloc %@", self);
+    
+    for (UIButton *button in self.scrollView.subviews) {
+        [button cancelImageRequestOperation];
+    }
 }
 
 @end
