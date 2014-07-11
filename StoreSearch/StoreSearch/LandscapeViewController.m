@@ -8,6 +8,7 @@
 
 #import "LandscapeViewController.h"
 #import "SearchResult.h"
+#import "Search.h"
 #import <AFNetworking/UIButton+AFNetworking.h>
 
 @interface LandscapeViewController () <UIScrollViewDelegate>
@@ -72,7 +73,7 @@
     int row = 0;
     int column = 0;
     
-    for (SearchResult *searchResult in self.searchResults) {
+    for (SearchResult *searchResult in self.search.searchResults) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         [self downloadImageForSearchResult:searchResult andPlaceOnButton:button];
         [button setBackgroundImage:[UIImage imageNamed:@"LandscapeButton"] forState:UIControlStateNormal];
@@ -96,7 +97,7 @@
     }
     
     int tilesPerPage = columnsPerPage * 3;
-    int numPages = ceilf([self.searchResults count] / (float)tilesPerPage);
+    int numPages = ceilf([self.search.searchResults count] / (float)tilesPerPage);
     self.scrollView.contentSize = CGSizeMake(numPages*scrollViewWidth, self.scrollView.bounds.size.height);
     
     self.pageControl.numberOfPages = numPages;

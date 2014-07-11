@@ -10,6 +10,7 @@
 		4E733691AFF94CCB9572EF88 /* libPods-StoreSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */; };
 		F924830B196F5C7500D02FFE /* LandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9248309196F5C7500D02FFE /* LandscapeViewController.m */; };
 		F924830C196F5C7500D02FFE /* LandscapeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F924830A196F5C7500D02FFE /* LandscapeViewController.xib */; };
+		F924830F196F7A3200D02FFE /* Search.m in Sources */ = {isa = PBXBuildFile; fileRef = F924830E196F7A3200D02FFE /* Search.m */; };
 		F994D3BC1968CF16000A3A34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BB1968CF16000A3A34 /* Foundation.framework */; };
 		F994D3BE1968CF16000A3A34 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */; };
 		F994D3C01968CF16000A3A34 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F994D3BF1968CF16000A3A34 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		F9248308196F5C7500D02FFE /* LandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeViewController.h; sourceTree = "<group>"; };
 		F9248309196F5C7500D02FFE /* LandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeViewController.m; sourceTree = "<group>"; };
 		F924830A196F5C7500D02FFE /* LandscapeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LandscapeViewController.xib; sourceTree = "<group>"; };
+		F924830D196F7A3200D02FFE /* Search.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Search.h; sourceTree = "<group>"; };
+		F924830E196F7A3200D02FFE /* Search.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Search.m; sourceTree = "<group>"; };
 		F994D3B81968CF16000A3A34 /* StoreSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StoreSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F994D3BB1968CF16000A3A34 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -161,6 +164,8 @@
 				F9C2D70B196C2E7100C31C40 /* LoadingCell.xib */,
 				F9E0675C196E0FD600AC2F82 /* GradientView.h */,
 				F9E0675D196E0FD600AC2F82 /* GradientView.m */,
+				F924830D196F7A3200D02FFE /* Search.h */,
+				F924830E196F7A3200D02FFE /* Search.m */,
 				F994D3D31968CF16000A3A34 /* Images.xcassets */,
 				F994D3C21968CF16000A3A34 /* Supporting Files */,
 			);
@@ -335,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F924830F196F7A3200D02FFE /* Search.m in Sources */,
 				F994D3CC1968CF16000A3A34 /* AppDelegate.m in Sources */,
 				F994D3F31968D06E000A3A34 /* SearchViewController.m in Sources */,
 				F994D3FC1968E0A5000A3A34 /* SearchResultCell.m in Sources */,
