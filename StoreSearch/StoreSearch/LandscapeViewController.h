@@ -12,4 +12,6 @@
 
 @interface LandscapeViewController : UIViewController
 @property (nonatomic, strong) Search *search;
+
+- (void)searchResultsReceived;
 @end
