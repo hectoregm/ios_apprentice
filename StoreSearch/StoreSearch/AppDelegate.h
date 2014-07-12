@@ -11,8 +11,7 @@
 @class SearchViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@property (strong, nonatomic) UISplitViewController *splitViewController;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) SearchViewController *searchViewController;
-
 @end

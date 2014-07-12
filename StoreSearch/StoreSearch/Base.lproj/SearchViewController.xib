@@ -34,7 +34,7 @@
                         <navigationItem id="kE7-lG-uCC">
                             <nil key="title"/>
                             <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="ku7-Bu-r9c">
-                                <rect key="frame" x="10" y="8" width="300" height="29"/>
+                                <rect key="frame" x="27" y="8" width="267" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="All"/>
@@ -60,16 +60,16 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="4Or-bb-aOK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3zZ-DA-bGf"/>
                 <constraint firstItem="AHJ-gC-xNA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8p1-hg-o2p"/>
-                <constraint firstItem="vRn-z1-Pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="AQj-yc-2Lx"/>
+                <constraint firstAttribute="trailing" secondItem="4Or-bb-aOK" secondAttribute="trailing" id="E4P-KN-2tr"/>
                 <constraint firstItem="AHJ-gC-xNA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="FNB-VR-oss"/>
+                <constraint firstItem="4Or-bb-aOK" firstAttribute="top" secondItem="vRn-z1-Pcj" secondAttribute="bottom" id="Gwo-cL-deW"/>
+                <constraint firstAttribute="trailing" secondItem="vRn-z1-Pcj" secondAttribute="trailing" id="JBJ-hu-ulk"/>
                 <constraint firstAttribute="bottom" secondItem="AHJ-gC-xNA" secondAttribute="bottom" id="R3d-bt-cHn"/>
-                <constraint firstAttribute="trailing" secondItem="4Or-bb-aOK" secondAttribute="trailing" id="dGE-EQ-xzu"/>
-                <constraint firstItem="vRn-z1-Pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="erh-vV-bbM"/>
                 <constraint firstAttribute="trailing" secondItem="AHJ-gC-xNA" secondAttribute="trailing" id="o5l-pE-YJB"/>
-                <constraint firstItem="4Or-bb-aOK" firstAttribute="top" secondItem="vRn-z1-Pcj" secondAttribute="bottom" id="scd-Rc-OEM"/>
-                <constraint firstAttribute="trailing" secondItem="vRn-z1-Pcj" secondAttribute="trailing" id="wel-fP-9SK"/>
+                <constraint firstItem="vRn-z1-Pcj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="oav-Px-37o"/>
+                <constraint firstItem="4Or-bb-aOK" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pGU-1y-ttv"/>
+                <constraint firstItem="vRn-z1-Pcj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="qY5-dk-bNd"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>

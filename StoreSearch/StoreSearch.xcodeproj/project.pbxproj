@@ -183,9 +183,9 @@
 		F994D3C21968CF16000A3A34 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F931157B196F92FD009BFEC4 /* Localizable.strings */,
 				F994D3CA1968CF16000A3A34 /* AppDelegate.h */,
 				F994D3CB1968CF16000A3A34 /* AppDelegate.m */,
+				F931157B196F92FD009BFEC4 /* Localizable.strings */,
 				F994D3C31968CF16000A3A34 /* StoreSearch-Info.plist */,
 				F994D3C41968CF16000A3A34 /* InfoPlist.strings */,
 				F994D3C71968CF16000A3A34 /* main.m */,
@@ -543,8 +543,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreSearch/StoreSearch-Prefix.pch";
 				INFOPLIST_FILE = "StoreSearch/StoreSearch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				"WARNING_CFLAGS[arch=*]" = (
 					"-Wall",
 					"-Wextra",
@@ -564,8 +566,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "StoreSearch/StoreSearch-Prefix.pch";
 				INFOPLIST_FILE = "StoreSearch/StoreSearch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -20,6 +20,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *kindLabel;
 @property (nonatomic, weak) IBOutlet UILabel *genreLabel;
 @property (nonatomic, weak) IBOutlet UIButton *priceButton;
+@property (nonatomic, weak) IBOutlet UIButton *closeButton;
+@property (nonatomic, strong) UIPopoverController *masterPopoverController;
 @end
 
 @implementation DetailViewController
@@ -39,7 +41,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
     
     if (self.searchResult != nil) {
         [self updateUI];
@@ -53,10 +54,50 @@
     [self.priceButton setBackgroundImage:image forState:UIControlStateNormal];
     self.view.tintColor = [UIColor colorWithRed:20/255.0f green:160/255.0f blue:160/255.0f alpha:1.0f];
     
-    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close:)];
-    gestureRecognizer.cancelsTouchesInView = NO;
-    gestureRecognizer.delegate = self;
-    [self.view addGestureRecognizer:gestureRecognizer];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
+        
+        self.closeButton.hidden = YES;
+        
+        self.popupView.hidden = (self.searchResult == nil);
+    } else {
+        UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close:)];
+        gestureRecognizer.cancelsTouchesInView = NO;
+        gestureRecognizer.delegate = self;
+        [self.view addGestureRecognizer:gestureRecognizer];
+        self.view.backgroundColor = [UIColor clearColor];
+    }
+}
+
+- (void)setSearchResult:(SearchResult *)newSearchResult
+{
+    if (_searchResult != newSearchResult) {
+        _searchResult = newSearchResult;
+        
+        if ([self isViewLoaded]) {
+            [self updateUI];
+        }
+    }
+}
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)pc
+{
+    barButtonItem.title = NSLocalizedString(@"Search", @"Split-view master button");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = pc;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
 }
 
 - (void)updateUI
@@ -84,6 +125,11 @@
     [self.priceButton setTitle:priceText forState:UIControlStateNormal];
     
     [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.artworkURL100] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        self.popupView.hidden = NO;
+        self.closeButton.hidden = YES;
+    }
 }
 
 - (IBAction)openInStore:(id)sender

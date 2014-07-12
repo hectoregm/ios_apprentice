@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchViewController : UIViewController
+@class DetailViewController;
 
+@interface SearchViewController : UIViewController
+@property (nonatomic, weak) DetailViewController *detailViewController;
 @end
