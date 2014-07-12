@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		4E733691AFF94CCB9572EF88 /* libPods-StoreSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */; };
+		F908F7001970E1B20051EC3F /* DetailViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F908F6FE1970E1B20051EC3F /* DetailViewController~ipad.xib */; };
+		F908F7051970E44F0051EC3F /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F908F7041970E44F0051EC3F /* MenuViewController.m */; };
+		F908F7071970E99E0051EC3F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F908F7061970E99E0051EC3F /* MessageUI.framework */; };
 		F91ECBE6196F89C900753A98 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91ECBE8196F89C900753A98 /* NothingFoundCell.xib */; };
 		F91ECBEB196F8C8600753A98 /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F91ECBED196F8C8600753A98 /* LoadingCell.xib */; };
 		F924830B196F5C7500D02FFE /* LandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9248309196F5C7500D02FFE /* LandscapeViewController.m */; };
@@ -49,6 +52,11 @@
 /* Begin PBXFileReference section */
 		1929EE9B381342B4BA262692 /* Pods-StoreSearch.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StoreSearch.xcconfig"; path = "Pods/Pods-StoreSearch.xcconfig"; sourceTree = "<group>"; };
 		67CF2BD559144815927A7FBC /* libPods-StoreSearch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StoreSearch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F908F6FF1970E1B20051EC3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/DetailViewController~ipad.xib"; sourceTree = "<group>"; };
+		F908F7021970E2E50051EC3F /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = "nl.lproj/DetailViewController~ipad.strings"; sourceTree = "<group>"; };
+		F908F7031970E44F0051EC3F /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		F908F7041970E44F0051EC3F /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		F908F7061970E99E0051EC3F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		F91ECBEA196F8C5100753A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/NothingFoundCell.xib; sourceTree = "<group>"; };
 		F91ECBEC196F8C8600753A98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadingCell.xib; sourceTree = "<group>"; };
 		F91ECBEF196F8CCF00753A98 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LoadingCell.strings; sourceTree = "<group>"; };
@@ -99,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F908F7071970E99E0051EC3F /* MessageUI.framework in Frameworks */,
 				F994D3BE1968CF16000A3A34 /* CoreGraphics.framework in Frameworks */,
 				F994D3C01968CF16000A3A34 /* UIKit.framework in Frameworks */,
 				F994D3BC1968CF16000A3A34 /* Foundation.framework in Frameworks */,
@@ -142,6 +151,7 @@
 		F994D3BA1968CF16000A3A34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F908F7061970E99E0051EC3F /* MessageUI.framework */,
 				F994D3BB1968CF16000A3A34 /* Foundation.framework */,
 				F994D3BD1968CF16000A3A34 /* CoreGraphics.framework */,
 				F994D3BF1968CF16000A3A34 /* UIKit.framework */,
@@ -160,9 +170,12 @@
 				F9EB7D1F196DC7940002ED50 /* DetailViewController.h */,
 				F9EB7D20196DC7940002ED50 /* DetailViewController.m */,
 				F9BEB723196F9000003E8C3F /* DetailViewController.xib */,
+				F908F6FE1970E1B20051EC3F /* DetailViewController~ipad.xib */,
 				F9248308196F5C7500D02FFE /* LandscapeViewController.h */,
 				F9248309196F5C7500D02FFE /* LandscapeViewController.m */,
 				F931157A196F9178009BFEC4 /* LandscapeViewController.xib */,
+				F908F7031970E44F0051EC3F /* MenuViewController.h */,
+				F908F7041970E44F0051EC3F /* MenuViewController.m */,
 				F994D3F51968D835000A3A34 /* SearchResult.h */,
 				F994D3F61968D835000A3A34 /* SearchResult.m */,
 				F994D3FA1968E0A5000A3A34 /* SearchResultCell.h */,
@@ -295,6 +308,7 @@
 				F994D3C61968CF16000A3A34 /* InfoPlist.strings in Resources */,
 				F9BEB721196F9000003E8C3F /* DetailViewController.xib in Resources */,
 				F91ECBEB196F8C8600753A98 /* LoadingCell.xib in Resources */,
+				F908F7001970E1B20051EC3F /* DetailViewController~ipad.xib in Resources */,
 				F931157D196F92FD009BFEC4 /* Localizable.strings in Resources */,
 				F9311575196F916F009BFEC4 /* SearchResultCell.xib in Resources */,
 				F91ECBE6196F89C900753A98 /* NothingFoundCell.xib in Resources */,
@@ -360,6 +374,7 @@
 				F9E0675E196E0FD600AC2F82 /* GradientView.m in Sources */,
 				F924830B196F5C7500D02FFE /* LandscapeViewController.m in Sources */,
 				F9EB7D22196DC7940002ED50 /* DetailViewController.m in Sources */,
+				F908F7051970E44F0051EC3F /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +397,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F908F6FE1970E1B20051EC3F /* DetailViewController~ipad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F908F6FF1970E1B20051EC3F /* Base */,
+				F908F7021970E2E50051EC3F /* nl */,
+			);
+			name = "DetailViewController~ipad.xib";
+			sourceTree = "<group>";
+		};
 		F91ECBE8196F89C900753A98 /* NothingFoundCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

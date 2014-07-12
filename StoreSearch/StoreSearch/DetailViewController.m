@@ -10,9 +10,12 @@
 #import "DetailViewController.h"
 #import "SearchResult.h"
 #import "GradientView.h"
+#import "MenuViewController.h"
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <MessageUI/MessageUI.h>
 
-@interface DetailViewController () <UIGestureRecognizerDelegate>
+
+@interface DetailViewController () <UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate>
 @property (nonatomic, weak) IBOutlet UIView *popupView;
 @property (nonatomic, weak) IBOutlet UIImageView *artworkImageView;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
@@ -22,11 +25,23 @@
 @property (nonatomic, weak) IBOutlet UIButton *priceButton;
 @property (nonatomic, weak) IBOutlet UIButton *closeButton;
 @property (nonatomic, strong) UIPopoverController *masterPopoverController;
+@property (nonatomic, strong) UIPopoverController *menuPopoverController;
 @end
 
 @implementation DetailViewController
 {
     GradientView *_gradientView;
+}
+
+- (UIPopoverController *)menuPopoverController
+{
+    if (_menuPopoverController == nil) {
+        MenuViewController *menuViewController = [[MenuViewController alloc] initWithStyle:UITableViewStyleGrouped];
+        menuViewController.detailViewController = self;
+        _menuPopoverController = [[UIPopoverController alloc] initWithContentViewController:menuViewController];
+    }
+    
+    return _menuPopoverController;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -60,9 +75,9 @@
         
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LandscapeBackground"]];
         
-        self.closeButton.hidden = YES;
-        
         self.popupView.hidden = (self.searchResult == nil);
+        
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(menuButtonPressed:)];
     } else {
         UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(close:)];
         gestureRecognizer.cancelsTouchesInView = NO;
@@ -103,6 +118,15 @@
     self.masterPopoverController = nil;
 }
 
+- (void)splitViewController:(UISplitViewController *)svc
+          popoverController:(UIPopoverController *)pc
+  willPresentViewController:(UIViewController *)aViewController
+{
+    if ([self.menuPopoverController isPopoverVisible]) {
+        [self.menuPopoverController dismissPopoverAnimated:YES];
+    }
+}
+
 - (void)updateUI
 {
     self.nameLabel.text = self.searchResult.name;
@@ -130,8 +154,11 @@
     [self.artworkImageView setImageWithURL:[NSURL URLWithString:self.searchResult.artworkURL100] placeholderImage:[UIImage imageNamed:@"Placeholder"]];
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        self.popupView.hidden = NO;
-        self.closeButton.hidden = YES;
+        self.popupView.alpha = 0.0f;
+        [UIView animateWithDuration:0.5 animations:^{
+            self.popupView.hidden = NO;
+            self.popupView.alpha = 1.0f;
+        } completion:nil];
         [self.masterPopoverController dismissPopoverAnimated:YES];
     }
 }
@@ -206,6 +233,36 @@
         [self removeFromParentViewController];
         [_gradientView removeFromSuperview];
     }];
+}
+
+- (void)menuButtonPressed:(UIBarButtonItem *)sender
+{
+    if ([self.menuPopoverController isPopoverVisible]) {
+        [self.menuPopoverController dismissPopoverAnimated:YES];
+    } else {
+        [self.menuPopoverController presentPopoverFromBarButtonItem:sender permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+}
+
+- (void)sendSupportEmail
+{
+    [self.menuPopoverController dismissPopoverAnimated:YES];
+    MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+    controller.modalPresentationStyle = UIModalPresentationFormSheet;
+    controller.mailComposeDelegate = self;
+    
+    if (controller != nil) {
+        [controller setSubject:NSLocalizedString(@"Support Request", @"Email subject")];
+        [controller setToRecipients:@[@"hectoregm@gmail.com"]];
+        [self presentViewController:controller animated:YES completion:nil];
+    }
+}
+
+#pragma mark - MFMailComposeViewControllerDelegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)dealloc

@@ -22,4 +22,5 @@ typedef NS_ENUM(NSUInteger, DetailViewControllerAnimationType) {
 
 - (void)dismissFromParentViewController:(DetailViewControllerAnimationType)animationType;
 
+- (void)sendSupportEmail;
 @end
