@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F95FC55B1A4D1A6000F0F909 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95FC55A1A4D1A6000F0F909 /* AboutViewController.swift */; };
 		F974A6AD1A4B14EC00B128ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974A6AC1A4B14EC00B128ED /* AppDelegate.swift */; };
 		F974A6AF1A4B14EC00B128ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974A6AE1A4B14EC00B128ED /* ViewController.swift */; };
 		F974A6B21A4B14EC00B128ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F974A6B01A4B14EC00B128ED /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F95FC55A1A4D1A6000F0F909 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F974A6A71A4B14EC00B128ED /* BullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F974A6AB1A4B14EC00B128ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F974A6AC1A4B14EC00B128ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			children = (
 				F974A6AC1A4B14EC00B128ED /* AppDelegate.swift */,
 				F974A6AE1A4B14EC00B128ED /* ViewController.swift */,
+				F95FC55A1A4D1A6000F0F909 /* AboutViewController.swift */,
 				F974A6B01A4B14EC00B128ED /* Main.storyboard */,
 				F974A6B31A4B14EC00B128ED /* Images.xcassets */,
 				F974A6B51A4B14EC00B128ED /* LaunchScreen.xib */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F95FC55B1A4D1A6000F0F909 /* AboutViewController.swift in Sources */,
 				F974A6AF1A4B14EC00B128ED /* ViewController.swift in Sources */,
 				F974A6AD1A4B14EC00B128ED /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +409,7 @@
 				F974A6C81A4B14EC00B128ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F974A6C91A4B14EC00B128ED /* Build configuration list for PBXNativeTarget "BullsEyeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				F974A6CB1A4B14EC00B128ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
