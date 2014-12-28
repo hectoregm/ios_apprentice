@@ -48,32 +48,59 @@
         <!--Add Item-->
         <scene sceneID="6KT-tT-ZtX">
             <objects>
-                <tableViewController id="VQA-dW-2xX" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="veh-kJ-OqU">
+                <tableViewController id="VQA-dW-2xX" customClass="AddItemViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="veh-kJ-OqU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="TLA-pd-eqW">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TLA-pd-eqW" id="5Qg-fW-KT1">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="Lp3-4t-LB6">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="TLA-pd-eqW">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TLA-pd-eqW" id="5Qg-fW-KT1">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VS3-Fi-KRu">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    <connections>
+                                                        <action selector="done" destination="VQA-dW-2xX" eventType="editingDidEndOnExit" id="O3i-i7-CAe"/>
+                                                        <outlet property="delegate" destination="VQA-dW-2xX" id="gin-1z-snr"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="VQA-dW-2xX" id="BEd-WJ-DEb"/>
                             <outlet property="delegate" destination="VQA-dW-2xX" id="m8L-tF-DYM"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Add Item" id="mZM-9M-4hu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OcX-JV-vid"/>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="qOl-wk-bbP"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OcX-JV-vid">
+                            <connections>
+                                <action selector="cancel" destination="VQA-dW-2xX" id="7Qu-6z-H66"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="qOl-wk-bbP">
+                            <connections>
+                                <action selector="done" destination="VQA-dW-2xX" id="u7P-w5-H5g"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="doneBarButton" destination="qOl-wk-bbP" id="3oG-es-eEc"/>
+                        <outlet property="textField" destination="VS3-Fi-KRu" id="6gt-G0-9zU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7h-Qp-Zmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2603" y="505"/>
+            <point key="canvasLocation" x="2603" y="504"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="8oZ-57-fGa">
