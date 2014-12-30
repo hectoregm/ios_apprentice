@@ -9,6 +9,7 @@
 import UIKit
 
 class ChecklistViewController: UITableViewController, ItemDetailViewControllerDelegate {
+    var checklist: Checklist!
     var items: [ChecklistItem]
     
     required init(coder aDecoder: NSCoder) {
@@ -20,6 +21,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 44
+        title = checklist.name
     }
     
     func documentsDirectory() -> String {

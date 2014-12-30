@@ -54,17 +54,18 @@ class AllListsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("ShowChecklist", sender: nil)
+        let checklist = lists[indexPath.row]
+        performSegueWithIdentifier("ShowChecklist", sender: checklist)
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowChecklist" {
+            let controller = segue.destinationViewController as ChecklistViewController
+            controller.checklist = sender as Checklist
+        }
     }
-    */
 
 }
