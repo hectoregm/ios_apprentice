@@ -19,8 +19,8 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z4a-4w-2RM" id="qKW-qE-Szp">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ges-fH-4Ox">
-                                            <rect key="frame" x="33" y="11" width="492" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ges-fH-4Ox">
+                                            <rect key="frame" x="40" y="11" width="493" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -32,6 +32,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="centerY" secondItem="ges-fH-4Ox" secondAttribute="centerY" id="1p7-yg-mMI"/>
+                                        <constraint firstItem="ges-fH-4Ox" firstAttribute="leading" secondItem="qKW-qE-Szp" secondAttribute="leading" constant="40" id="R2c-KV-0Zf"/>
+                                        <constraint firstAttribute="trailing" secondItem="ges-fH-4Ox" secondAttribute="trailing" id="lhS-8w-1mt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <segue destination="ncL-fJ-WJN" kind="presentation" identifier="EditItem" trigger="accessoryAction" id="bRf-SX-K59"/>
@@ -71,8 +76,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="84O-PS-Vgh" id="kf3-Kb-wLy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFQ-q1-YKN">
-                                                    <rect key="frame" x="14" y="8" width="273" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tFQ-q1-YKN">
+                                                    <rect key="frame" x="14" y="10" width="572" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="06L-Bm-ETL"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -81,6 +89,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="tFQ-q1-YKN" secondAttribute="trailing" constant="14" id="0MY-mL-EbQ"/>
+                                                <constraint firstItem="tFQ-q1-YKN" firstAttribute="top" secondItem="kf3-Kb-wLy" secondAttribute="top" constant="10" id="IhB-0B-bFG"/>
+                                                <constraint firstItem="tFQ-q1-YKN" firstAttribute="leading" secondItem="kf3-Kb-wLy" secondAttribute="leading" constant="14" id="Xs6-16-hyR"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -151,7 +164,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mLD-B4-o5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="1283"/>
+            <point key="canvasLocation" x="980" y="1281"/>
         </scene>
         <!--Choose Icon-->
         <scene sceneID="7eq-zZ-rFE">
@@ -220,8 +233,11 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TLA-pd-eqW" id="5Qg-fW-KT1">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VS3-Fi-KRu">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VS3-Fi-KRu">
                                                     <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="IMR-yH-hoo"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -230,6 +246,11 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="VS3-Fi-KRu" secondAttribute="trailing" constant="8" id="9pH-4k-PL1"/>
+                                                <constraint firstItem="VS3-Fi-KRu" firstAttribute="leading" secondItem="5Qg-fW-KT1" secondAttribute="leading" constant="8" id="GPY-M2-GAK"/>
+                                                <constraint firstItem="VS3-Fi-KRu" firstAttribute="top" secondItem="5Qg-fW-KT1" secondAttribute="top" constant="7" id="KZe-Q7-L7D"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
