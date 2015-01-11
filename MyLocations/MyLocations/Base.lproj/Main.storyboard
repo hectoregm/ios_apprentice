@@ -61,7 +61,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="kbZ-83-gny" kind="modal" id="F2k-sD-X5k"/>
+                                    <segue destination="kbZ-83-gny" kind="modal" identifier="TagLocation" id="F2k-sD-X5k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lfe-Wb-bDh">
