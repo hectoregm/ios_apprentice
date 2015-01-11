@@ -262,10 +262,18 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressLabel" destination="oIe-dC-pvY" id="YXz-r0-AMA"/>
+                        <outlet property="categoryLabel" destination="9nB-H1-IrX" id="jRV-jn-5xO"/>
+                        <outlet property="dateLabel" destination="StZ-DW-FlS" id="YJr-Zu-tmv"/>
+                        <outlet property="descriptionTextView" destination="O4K-4Z-3qu" id="mQy-0y-yoe"/>
+                        <outlet property="latitudeLabel" destination="cOz-1E-OQZ" id="wSs-56-gI5"/>
+                        <outlet property="longitudeLabel" destination="0fg-Gx-jEr" id="vAC-8j-6MD"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZK-AM-TB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366" y="-303"/>
+            <point key="canvasLocation" x="1361" y="-314"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
