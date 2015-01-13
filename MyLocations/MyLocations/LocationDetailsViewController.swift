@@ -24,6 +24,7 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet weak var longitudeLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    var descriptionText = ""
     
     var coordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var placemark: CLPlacemark?
@@ -31,7 +32,7 @@ class LocationDetailsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionTextView.text = ""
+        descriptionTextView.text = descriptionText
         categoryLabel.text = ""
         
         latitudeLabel.text = String(format: "%.8f", coordinate.latitude)
@@ -63,6 +64,7 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     @IBAction func done() {
+        println("Description \(descriptionText)")
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -80,5 +82,16 @@ class LocationDetailsViewController: UITableViewController {
         } else {
             return 44
         }
+    }
+}
+
+extension LocationDetailsViewController: UITextViewDelegate {
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        descriptionText = (textView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
+        return true
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        descriptionText = textView.text
     }
 }

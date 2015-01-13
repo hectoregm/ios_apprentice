@@ -113,6 +113,9 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="NHU-nl-gaB" id="oA7-OU-xhg"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                         </tableViewCellContentView>

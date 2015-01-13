@@ -211,7 +211,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             }
             
             if !performingReverseGeocoding {
-                println("*** Going to gocode")
+                println("*** Going to geocode")
                 
                 performingReverseGeocoding = true
                 
