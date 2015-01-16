@@ -16,6 +16,7 @@
 		F9C28B911A5A36E400A0EA8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C28B901A5A36E400A0EA8C /* Images.xcassets */; };
 		F9C28B941A5A36E400A0EA8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C28B921A5A36E400A0EA8C /* LaunchScreen.xib */; };
 		F9C28BA01A5A36E400A0EA8C /* MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C28B9F1A5A36E400A0EA8C /* MyLocationsTests.swift */; };
+		F9CA6C011A677A8A004C9E2F /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA6C001A677A8A004C9E2F /* HudView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		F9C28B991A5A36E400A0EA8C /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C28B9E1A5A36E400A0EA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C28B9F1A5A36E400A0EA8C /* MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationsTests.swift; sourceTree = "<group>"; };
+		F9CA6C001A677A8A004C9E2F /* HudView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				F9C28B891A5A36E400A0EA8C /* CurrentLocationViewController.swift */,
 				F94409B61A60D7B200D41CEE /* LocationDetailsViewController.swift */,
 				F9AEFCC51A662FF100ED6186 /* CategoryPickerViewController.swift */,
+				F9CA6C001A677A8A004C9E2F /* HudView.swift */,
 				F9C28B8B1A5A36E400A0EA8C /* SecondViewController.swift */,
 				F9C28B8D1A5A36E400A0EA8C /* Main.storyboard */,
 				F9C28B901A5A36E400A0EA8C /* Images.xcassets */,
@@ -223,6 +226,7 @@
 			files = (
 				F94409B71A60D7B200D41CEE /* LocationDetailsViewController.swift in Sources */,
 				F9C28B8C1A5A36E400A0EA8C /* SecondViewController.swift in Sources */,
+				F9CA6C011A677A8A004C9E2F /* HudView.swift in Sources */,
 				F9C28B881A5A36E400A0EA8C /* AppDelegate.swift in Sources */,
 				F9AEFCC61A662FF100ED6186 /* CategoryPickerViewController.swift in Sources */,
 				F9C28B8A1A5A36E400A0EA8C /* CurrentLocationViewController.swift in Sources */,
