@@ -18,8 +18,6 @@ class HudView: UIView {
         view.addSubview(hudView)
         view.userInteractionEnabled = false
         
-        //hudView.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
-        
         return hudView
     }
     
@@ -36,6 +34,22 @@ class HudView: UIView {
         let roundedRect = UIBezierPath(roundedRect: boxRect, cornerRadius: 10)
         UIColor(white: 0.3, alpha: 0.8).setFill()
         roundedRect.fill()
+        
+        if let image = UIImage(named: "Checkmark") {
+            let imagePoint = CGPoint(
+                x: center.x - round(image.size.width / 2),
+                y: center.y - round(image.size.height / 2) - boxHeight / 8)
+            image.drawAtPoint(imagePoint)
+        }
+        
+        let attribs = [NSFontAttributeName: UIFont.systemFontOfSize(16.0),
+            NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        let textSize = text.sizeWithAttributes(attribs)
+        let textPoint = CGPoint(
+            x: center.x - round(textSize.width / 2),
+            y: center.y - round(textSize.height / 2) + boxHeight / 4)
+        text.drawAtPoint(textPoint, withAttributes: attribs)
     }
 
 }
