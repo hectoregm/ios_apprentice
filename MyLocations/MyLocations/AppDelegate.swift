@@ -9,6 +9,15 @@
 import UIKit
 import CoreData
 
+let MyManagedObjectContextSaveDidFailNotification = "MyManagedObjectContextSaveDidFailNotification"
+
+func fatalCoreDataError(error: NSError?) {
+    if let error = error {
+        println("*** Fatal error: \(error), \(error.userInfo)")
+        NSNotificationCenter.defaultCenter().postNotificationName(MyManagedObjectContextSaveDidFailNotification, object: error)
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
