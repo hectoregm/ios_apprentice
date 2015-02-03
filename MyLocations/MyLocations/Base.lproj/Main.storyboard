@@ -408,7 +408,7 @@
         <scene sceneID="sPS-8T-SPw">
             <objects>
                 <navigationController id="dw1-dC-bWa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Locations" id="w4Q-eX-L5E"/>
+                    <tabBarItem key="tabBarItem" title="Locations" image="second" id="w4Q-eX-L5E"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Uy-ao-izS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -424,6 +424,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
