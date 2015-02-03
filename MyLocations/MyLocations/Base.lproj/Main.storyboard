@@ -389,6 +389,7 @@
                                 <connections>
                                     <outlet property="addressLabel" destination="M9X-bF-hpp" id="VCP-hI-5Sh"/>
                                     <outlet property="descriptionLabel" destination="nkA-72-UvH" id="a1Z-xp-bXI"/>
+                                    <segue destination="kbZ-83-gny" kind="modal" identifier="EditLocation" id="oTC-eA-bVk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -401,7 +402,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YlI-Gk-BRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="943" y="336"/>
+            <point key="canvasLocation" x="834" y="349"/>
         </scene>
         <!--Locations-->
         <scene sceneID="sPS-8T-SPw">
@@ -418,7 +419,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XER-Ji-WZX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="403" y="336"/>
+            <point key="canvasLocation" x="400" y="349"/>
         </scene>
     </scenes>
     <resources>
@@ -429,4 +430,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="oTC-eA-bVk"/>
+    </inferredMetricsTieBreakers>
 </document>
