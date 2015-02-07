@@ -14,7 +14,19 @@ class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     var locations = [Location]()
     
-    var managedObjectContext: NSManagedObjectContext!
+    var managedObjectContext: NSManagedObjectContext! {
+        didSet {
+            NSNotificationCenter.defaultCenter().addObserverForName(
+                NSManagedObjectContextObjectsDidChangeNotification,
+                object: managedObjectContext,
+                queue: NSOperationQueue.mainQueue()) {
+                    _ in
+                    if self.isViewLoaded() {
+                        self.updateLocations()
+                    }
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +98,23 @@ class MapViewController: UIViewController {
         }
         return mapView.regionThatFits(region)
     }
+    
+    func showLocationDetails(sender: UIButton) {
+        performSegueWithIdentifier("EditLocation", sender: sender)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "EditLocation" {
+            let navigationController = segue.destinationViewController as UINavigationController
+            let controller = navigationController.topViewController as LocationDetailsViewController
+            
+            controller.managedObjectContext = managedObjectContext
+            
+            let button = sender as UIButton
+            let location = locations[button.tag]
+            controller.locationToEdit = location
+        }
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -118,5 +147,11 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         return nil
+    }
+}
+
+extension MapViewController: UINavigationBarDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+        return .TopAttached
     }
 }
