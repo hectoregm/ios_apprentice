@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F92DF8551A8713E7002DD508 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92DF8541A8713E7002DD508 /* UIImage+Resize.swift */; };
 		F94409B71A60D7B200D41CEE /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94409B61A60D7B200D41CEE /* LocationDetailsViewController.swift */; };
 		F95D3E451A804D6600CBAE15 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F95D3E441A804D6600CBAE15 /* LocationsViewController.swift */; };
 		F998BAE41A8305C0008F57E3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F998BAE31A8305C0008F57E3 /* MapKit.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F92DF8541A8713E7002DD508 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		F94409B61A60D7B200D41CEE /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
 		F95D3E441A804D6600CBAE15 /* LocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
 		F998BAE31A8305C0008F57E3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -110,6 +112,7 @@
 				F95D3E441A804D6600CBAE15 /* LocationsViewController.swift */,
 				F9E114681A805449001E006F /* LocationCell.swift */,
 				F998BAE51A8306FA008F57E3 /* MapViewController.swift */,
+				F92DF8541A8713E7002DD508 /* UIImage+Resize.swift */,
 				F9BE80231A76E58B006C9A38 /* DataModel.xcdatamodeld */,
 				F9C28B8D1A5A36E400A0EA8C /* Main.storyboard */,
 				F9C28B901A5A36E400A0EA8C /* Images.xcassets */,
@@ -248,6 +251,7 @@
 				F95D3E451A804D6600CBAE15 /* LocationsViewController.swift in Sources */,
 				F9BE80251A76E58B006C9A38 /* DataModel.xcdatamodeld in Sources */,
 				F9CA6C011A677A8A004C9E2F /* HudView.swift in Sources */,
+				F92DF8551A8713E7002DD508 /* UIImage+Resize.swift in Sources */,
 				F9B5552C1A68E4D300FD0BE6 /* Functions.swift in Sources */,
 				F9E114691A805449001E006F /* LocationCell.swift in Sources */,
 				F9C28B881A5A36E400A0EA8C /* AppDelegate.swift in Sources */,

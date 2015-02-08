@@ -378,24 +378,29 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nkA-72-UvH">
-                                            <rect key="frame" x="15" y="4" width="295" height="21"/>
+                                            <rect key="frame" x="82" y="4" width="238" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M9X-bF-hpp">
-                                            <rect key="frame" x="15" y="27" width="295" height="21"/>
+                                            <rect key="frame" x="82" y="27" width="238" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="TcF-bK-czO">
+                                            <rect key="frame" x="15" y="2" width="52" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="addressLabel" destination="M9X-bF-hpp" id="VCP-hI-5Sh"/>
                                     <outlet property="descriptionLabel" destination="nkA-72-UvH" id="a1Z-xp-bXI"/>
+                                    <outlet property="photoImageView" destination="TcF-bK-czO" id="tMF-DZ-Jx6"/>
                                     <segue destination="kbZ-83-gny" kind="modal" identifier="EditLocation" id="oTC-eA-bVk"/>
                                 </connections>
                             </tableViewCell>
@@ -488,6 +493,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Sxy-1o-i5Q"/>
+        <segue reference="oTC-eA-bVk"/>
     </inferredMetricsTieBreakers>
 </document>
