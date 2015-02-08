@@ -158,6 +158,10 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Oyp-BJ-V9c">
+                                                    <rect key="frame" x="111" y="11" width="144" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -268,10 +272,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addPhotoLabel" destination="dUK-hK-qL3" id="Xjv-ir-hbw"/>
                         <outlet property="addressLabel" destination="oIe-dC-pvY" id="YXz-r0-AMA"/>
                         <outlet property="categoryLabel" destination="9nB-H1-IrX" id="jRV-jn-5xO"/>
                         <outlet property="dateLabel" destination="StZ-DW-FlS" id="YJr-Zu-tmv"/>
                         <outlet property="descriptionTextView" destination="O4K-4Z-3qu" id="mQy-0y-yoe"/>
+                        <outlet property="imageView" destination="Oyp-BJ-V9c" id="VV1-W3-6UU"/>
                         <outlet property="latitudeLabel" destination="cOz-1E-OQZ" id="wSs-56-gI5"/>
                         <outlet property="longitudeLabel" destination="0fg-Gx-jEr" id="vAC-8j-6MD"/>
                     </connections>
