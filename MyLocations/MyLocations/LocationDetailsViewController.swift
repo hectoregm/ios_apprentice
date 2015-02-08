@@ -171,7 +171,8 @@ class LocationDetailsViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0 {
             descriptionTextView.becomeFirstResponder()
         } else if indexPath.section == 1 && indexPath.row == 0 {
-            choosePhotoFromLibrary()
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            pickPhoto()
         }
     }
     
@@ -209,6 +210,32 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func pickPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            showPhotoMenu()
+        } else {
+            choosePhotoFromLibrary()
+        }
+    }
+    
+    func showPhotoMenu() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let takePhotoAction = UIAlertAction(title: "Take Photo", style: .Default) {
+            _ in self.takePhotoWithCamera()
+        }
+        alertController.addAction(takePhotoAction)
+        
+        let chooseFromLibraryAction = UIAlertAction(title: "Choose from Library", style: .Default) {
+            _ in self.choosePhotoFromLibrary()
+        }
+        alertController.addAction(chooseFromLibraryAction)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
