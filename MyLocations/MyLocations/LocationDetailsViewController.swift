@@ -45,6 +45,8 @@ class LocationDetailsViewController: UITableViewController {
     
     var date = NSDate()
     
+    var observer: AnyObject!
+    
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
@@ -82,6 +84,8 @@ class LocationDetailsViewController: UITableViewController {
             action: Selector("hideKeyboard:"))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        listenForBackgroundNotification()
     }
     
     override func viewWillLayoutSubviews() {
@@ -118,6 +122,19 @@ class LocationDetailsViewController: UITableViewController {
         imageView.hidden = false
         imageView.frame = CGRect(x: 10, y: 10, width: 260, height: 260)
         addPhotoLabel.hidden = true
+    }
+    
+    func listenForBackgroundNotification() {
+        observer = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationDidEnterBackgroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) {
+            [weak self] notification in
+            if let strongSelf = self {
+                if strongSelf.presentedViewController != nil {
+                    strongSelf.dismissViewControllerAnimated(false, completion: nil)
+                }
+                
+                strongSelf.descriptionTextView.resignFirstResponder()
+            }
+        }
     }
     
     @IBAction func cancel() {
@@ -201,6 +218,11 @@ class LocationDetailsViewController: UITableViewController {
             let controller = segue.destinationViewController as CategoryPickerViewController
             controller.selectedCategoryName = categoryName
         }
+    }
+    
+    deinit {
+        println("*** deinit \(self)")
+        NSNotificationCenter.defaultCenter().removeObserver(observer)
     }
 }
 
