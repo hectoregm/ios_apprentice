@@ -348,10 +348,10 @@
             </objects>
             <point key="canvasLocation" x="-30" y="349"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--My Navigation Controller-->
         <scene sceneID="R5S-9t-Dxw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbZ-83-gny" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbZ-83-gny" customClass="MyNavigationController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D4a-oE-41K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -422,7 +422,7 @@
         <!--Locations-->
         <scene sceneID="sPS-8T-SPw">
             <objects>
-                <navigationController id="dw1-dC-bWa" sceneMemberID="viewController">
+                <navigationController id="dw1-dC-bWa" customClass="MyNavigationController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Locations" image="Locations" id="w4Q-eX-L5E"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Uy-ao-izS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
