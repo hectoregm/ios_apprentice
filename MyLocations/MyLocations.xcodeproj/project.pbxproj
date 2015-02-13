@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90A74B01A8E072900FC5027 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = F90A74AF1A8E072900FC5027 /* Sound.caf */; };
 		F92DF8551A8713E7002DD508 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92DF8541A8713E7002DD508 /* UIImage+Resize.swift */; };
 		F936A7DE1A8C5351008BFF3A /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936A7DD1A8C5351008BFF3A /* MyTabBarController.swift */; };
 		F936A7E01A8C545F008BFF3A /* MyNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F936A7DF1A8C545F008BFF3A /* MyNavigationController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F90A74AF1A8E072900FC5027 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		F92DF8541A8713E7002DD508 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 		F936A7DD1A8C5351008BFF3A /* MyTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		F936A7DF1A8C545F008BFF3A /* MyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNavigationController.swift; sourceTree = "<group>"; };
@@ -87,9 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F90A74AE1A8E072900FC5027 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				F90A74AF1A8E072900FC5027 /* Sound.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		F9C28B791A5A36E400A0EA8C = {
 			isa = PBXGroup;
 			children = (
+				F90A74AE1A8E072900FC5027 /* Sound */,
 				F998BAE31A8305C0008F57E3 /* MapKit.framework */,
 				F9C28B841A5A36E400A0EA8C /* MyLocations */,
 				F9C28B9C1A5A36E400A0EA8C /* MyLocationsTests */,
@@ -240,6 +251,7 @@
 			files = (
 				F9C28B8F1A5A36E400A0EA8C /* Main.storyboard in Resources */,
 				F9C28B941A5A36E400A0EA8C /* LaunchScreen.xib in Resources */,
+				F90A74B01A8E072900FC5027 /* Sound.caf in Resources */,
 				F9C28B911A5A36E400A0EA8C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
