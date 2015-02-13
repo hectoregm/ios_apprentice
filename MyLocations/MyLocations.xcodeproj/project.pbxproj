@@ -25,7 +25,6 @@
 		F9C28B8A1A5A36E400A0EA8C /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C28B891A5A36E400A0EA8C /* CurrentLocationViewController.swift */; };
 		F9C28B8F1A5A36E400A0EA8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C28B8D1A5A36E400A0EA8C /* Main.storyboard */; };
 		F9C28B911A5A36E400A0EA8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C28B901A5A36E400A0EA8C /* Images.xcassets */; };
-		F9C28B941A5A36E400A0EA8C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C28B921A5A36E400A0EA8C /* LaunchScreen.xib */; };
 		F9C28BA01A5A36E400A0EA8C /* MyLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C28B9F1A5A36E400A0EA8C /* MyLocationsTests.swift */; };
 		F9CA6C011A677A8A004C9E2F /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9CA6C001A677A8A004C9E2F /* HudView.swift */; };
 		F9E114691A805449001E006F /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E114681A805449001E006F /* LocationCell.swift */; };
@@ -62,7 +61,6 @@
 		F9C28B891A5A36E400A0EA8C /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		F9C28B8E1A5A36E400A0EA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9C28B901A5A36E400A0EA8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		F9C28B931A5A36E400A0EA8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9C28B991A5A36E400A0EA8C /* MyLocationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyLocationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C28B9E1A5A36E400A0EA8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C28B9F1A5A36E400A0EA8C /* MyLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocationsTests.swift; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 				F9C28B891A5A36E400A0EA8C /* CurrentLocationViewController.swift */,
 				F9B5552B1A68E4D300FD0BE6 /* Functions.swift */,
 				F9CA6C001A677A8A004C9E2F /* HudView.swift */,
-				F9C28B921A5A36E400A0EA8C /* LaunchScreen.xib */,
 				F9BE80281A76E7B3006C9A38 /* Location.swift */,
 				F9E114681A805449001E006F /* LocationCell.swift */,
 				F94409B61A60D7B200D41CEE /* LocationDetailsViewController.swift */,
@@ -250,7 +247,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9C28B8F1A5A36E400A0EA8C /* Main.storyboard in Resources */,
-				F9C28B941A5A36E400A0EA8C /* LaunchScreen.xib in Resources */,
 				F90A74B01A8E072900FC5027 /* Sound.caf in Resources */,
 				F9C28B911A5A36E400A0EA8C /* Images.xcassets in Resources */,
 			);
@@ -314,14 +310,6 @@
 				F9C28B8E1A5A36E400A0EA8C /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F9C28B921A5A36E400A0EA8C /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F9C28B931A5A36E400A0EA8C /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -408,6 +396,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MyLocations/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
