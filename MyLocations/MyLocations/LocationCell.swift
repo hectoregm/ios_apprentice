@@ -25,6 +25,18 @@ class LocationCell: UITableViewCell {
         let selectionView = UIView(frame: CGRect.zeroRect)
         selectionView.backgroundColor = UIColor(white: 1.0, alpha: 0.2)
         selectedBackgroundView = selectionView
+        
+        photoImageView.layer.cornerRadius = photoImageView.bounds.size.width / 2
+        photoImageView.clipsToBounds = true
+        separatorInset = UIEdgeInsets(top: 0, left: 82, bottom: 0, right: 0)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let sv = superview {
+            descriptionLabel.frame.size.width = sv.frame.size.width - descriptionLabel.frame.origin.x - 10
+            addressLabel.frame.size.width = sv.frame.size.width - addressLabel.frame.origin.x - 10
+        }
     }
     
     func configureForLocation(location: Location) {
@@ -54,6 +66,7 @@ class LocationCell: UITableViewCell {
             }
         }
         
-        return UIImage()
+        return UIImage(named: "No Photo")!
     }
+    
 }
